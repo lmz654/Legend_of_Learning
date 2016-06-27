@@ -1,7 +1,7 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
-Project("{8D84B104-E6FB-333E-3437-7DE77A1B4A03}") = "THE GAME", "Assembly-CSharp.csproj", "{1B4D90AC-2D8A-ECAE-9FBE-B2376907CD84}"
+Project("{8D84B104-E6FB-333E-3437-7DE77A1B4A03}") = "THE GAME", "Assembly-CSharp-vs.csproj", "{1B4D90AC-2D8A-ECAE-9FBE-B2376907CD84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,7 +17,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-			GlobalSection(MonoDevelopProperties) = preSolution
+				GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
