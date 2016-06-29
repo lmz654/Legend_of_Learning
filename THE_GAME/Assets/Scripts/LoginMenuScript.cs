@@ -20,6 +20,7 @@ public class LoginMenuScript : MonoBehaviour {
 
     public void submitPressed() {
         //do something with login info
+        SceneManager.LoadScene(2);
     }
 
     public void guestLoginPressed() {

@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/scenes/StartMenu.unity
   - enabled: 1
     path: Assets/scenes/LoginScreen.unity
+  - enabled: 1
+    path: Assets/scenes/GameSelect.unity
