@@ -6,14 +6,14 @@ using UnityEngine.SceneManagement;
 public class GameSelectScript : MonoBehaviour {
     public Button histGame;
     public Button mathGame;
-    public Button chemGame;
+    public Button vocabNinja;
     public Button logout;
 
     // Use this for initialization
     void Start () {
-        histGame = histGame.GetComponent<Button>();
+        vocabNinja = histGame.GetComponent<Button>();
         mathGame = mathGame.GetComponent<Button>();
-        chemGame = chemGame.GetComponent<Button>();
+        vocabNinja = vocabNinja.GetComponent<Button>();
         logout = logout.GetComponent<Button>();
 	}
 
@@ -25,8 +25,8 @@ public class GameSelectScript : MonoBehaviour {
         //math game selected
     }
 
-    public void chemPressed() {
-        //chemistry game selected
+    public void ninjaPressed() {
+        SceneManager.LoadScene(4);
     }
 
     public void logoutPressed() {
