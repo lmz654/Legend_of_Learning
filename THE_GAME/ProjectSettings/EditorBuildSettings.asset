@@ -11,3 +11,5 @@ EditorBuildSettings:
     path: Assets/scenes/LoginScreen.unity
   - enabled: 1
     path: Assets/scenes/GameSelect.unity
+  - enabled: 1
+    path: Assets/scenes/RegisterUser.unity

@@ -25,6 +25,7 @@ public class LoginMenuScript : MonoBehaviour {
 
     public void guestLoginPressed() {
         //continue without saving
+        SceneManager.LoadScene(2);
     }
 
     public void pwdResetPressed() {
@@ -33,6 +34,7 @@ public class LoginMenuScript : MonoBehaviour {
 
     public void registerPressed() {
         //go to registration page
+        SceneManager.LoadScene(3);
     }
 
     public void backPressed() {
