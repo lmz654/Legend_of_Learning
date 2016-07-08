@@ -1133,7 +1133,7 @@ GameObject:
   - 114: {fileID: 1521765686}
   - 114: {fileID: 1521765685}
   m_Layer: 5
-  m_Name: Sign_in
+  m_Name: signin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1534,11 +1534,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6116386a9a6d4e94dabf7ca2e989e8b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signin: {fileID: 0}
+  signin: {fileID: 1521765685}
   guestLogin: {fileID: 1686419762}
   pwdReset: {fileID: 1297673492}
   register: {fileID: 2011956076}
   back: {fileID: 1396516477}
+  quit: {fileID: 812038430}
+  username: {fileID: 1991061412}
+  password: {fileID: 712750823}
+  status: {fileID: 1938663432}
 --- !u!114 &1814573410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1723,7 +1727,7 @@ GameObject:
   - 222: {fileID: 1938663433}
   - 114: {fileID: 1938663432}
   m_Layer: 5
-  m_Name: Text
+  m_Name: status
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

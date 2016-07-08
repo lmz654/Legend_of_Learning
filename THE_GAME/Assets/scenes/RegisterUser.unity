@@ -191,6 +191,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   submit: {fileID: 1366278665}
   back: {fileID: 1926808226}
+  quit: {fileID: 1475507700}
+  username: {fileID: 1900914270}
+  password: {fileID: 2106714566}
+  confirmpass: {fileID: 95304256}
+  phonenumber: {fileID: 560930912}
+  sendtoemail: {fileID: 1689625188}
+  sendtophone: {fileID: 1007072767}
 --- !u!114 &93057127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -723,13 +730,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 560130219}
   m_TextComponent: {fileID: 560930912}
   m_Placeholder: {fileID: 1702579218}
-  m_ContentType: 0
+  m_ContentType: 2
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 4
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 1
   m_CharacterLimit: 10
   m_OnEndEdit:
     m_PersistentCalls:
@@ -1351,7 +1358,18 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 93057126}
+        m_MethodName: sendtophonechange
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
@@ -1984,7 +2002,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 93057126}
-        m_MethodName: backPressed
+        m_MethodName: quitPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2290,7 +2308,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 9, y: 86}
+  m_AnchoredPosition: {x: 9, y: 124}
   m_SizeDelta: {x: 382.3, y: 62.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1539687418
@@ -2970,7 +2988,7 @@ RectTransform:
   m_RootOrder: 7
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 100, y: -308}
+  m_AnchoredPosition: {x: 77, y: -308}
   m_SizeDelta: {x: 97, y: 27}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1938662171
@@ -2984,7 +3002,7 @@ GameObject:
   - 222: {fileID: 1938662174}
   - 114: {fileID: 1938662173}
   m_Layer: 5
-  m_Name: UsernamePrompt (1)
+  m_Name: phonenumber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3005,7 +3023,7 @@ RectTransform:
   m_RootOrder: 8
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -181, y: -230}
+  m_AnchoredPosition: {x: -181, y: -231}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1938662173

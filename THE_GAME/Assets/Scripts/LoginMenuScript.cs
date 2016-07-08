@@ -9,6 +9,10 @@ public class LoginMenuScript : MonoBehaviour {
     public Button pwdReset;
     public Button register;
     public Button back;
+    public Button quit;
+    public Text username;
+    public Text password;
+    public Text status;
 	// Use this for initialization
 	void Start () {
         signin = signin.GetComponent<Button>();
@@ -16,11 +20,16 @@ public class LoginMenuScript : MonoBehaviour {
         pwdReset = pwdReset.GetComponent<Button>();
         register = register.GetComponent<Button>();
         back = back.GetComponent<Button>();
+        quit = quit.GetComponent<Button>();
+        status = status.GetComponent<Text>();
 	}
     public void signinPressed() { 
     
     }
 
+    public void quitPressed() {
+        Application.Quit();
+    }
     public void exitPressed() {
         Application.Quit();
     }

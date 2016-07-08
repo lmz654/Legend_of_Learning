@@ -14,7 +14,7 @@ Platform assembly: C:\Users\huudw\Documents\GitHub\Legend_of_Learning\THE_GAME\T
 Loading C:\Users\huudw\Documents\GitHub\Legend_of_Learning\THE_GAME\The_Game_Menu_Test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Users\huudw\Documents\GitHub\Legend_of_Learning\THE_GAME\The_Game_Menu_Test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading C:\Users\huudw\Documents\GitHub\Legend_of_Learning\THE_GAME\The_Game_Menu_Test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.035 seconds
+- Completed reload, in  0.040 seconds
 Platform assembly: C:\Users\huudw\Documents\GitHub\Legend_of_Learning\THE_GAME\The_Game_Menu_Test_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\huudw\Documents\GitHub\Legend_of_Learning\THE_GAME\The_Game_Menu_Test_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
@@ -22,12 +22,41 @@ desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.895399 ms
+UnloadTime: 0.943173 ms
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.216226 ms
+UnloadTime: 3.368564 ms
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 241.
-Total: 0.225652 ms (FindLiveObjects: 0.019230 ms CreateObjectMapping: 0.007511 ms MarkObjects: 0.195305 ms  DeleteObjects: 0.003305 ms)
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 245.
+Total: 0.195605 ms (FindLiveObjects: 0.015023 ms CreateObjectMapping: 0.007211 ms MarkObjects: 0.170366 ms  DeleteObjects: 0.002704 ms)
+
+NullReferenceException: Object reference not set to an instance of an object
+  at LoginMenuScript.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.054047 ms
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 193.
+Total: 0.236469 ms (FindLiveObjects: 0.027943 ms CreateObjectMapping: 0.006309 ms MarkObjects: 0.195004 ms  DeleteObjects: 0.006910 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.432676 ms
+
+Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 381.
+Total: 0.206723 ms (FindLiveObjects: 0.030046 ms CreateObjectMapping: 0.025539 ms MarkObjects: 0.142122 ms  DeleteObjects: 0.008713 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.299267 ms
+
+Unloading 186 unused Assets to reduce memory usage. Loaded Objects now: 193.
+Total: 0.292056 ms (FindLiveObjects: 0.017427 ms CreateObjectMapping: 0.013521 ms MarkObjects: 0.154441 ms  DeleteObjects: 0.105765 ms)
+
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.290854 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 245.
+Total: 0.253896 ms (FindLiveObjects: 0.015924 ms CreateObjectMapping: 0.007511 ms MarkObjects: 0.225953 ms  DeleteObjects: 0.003605 ms)
 
 NullReferenceException: Object reference not set to an instance of an object
   at LoginMenuScript.Start () [0x00000] in <filename unknown>:0 
@@ -35,5 +64,5 @@ NullReferenceException: Object reference not set to an instance of an object
 (Filename:  Line: -1)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 13f8 -> priority: 1 
-  Thread -> id: 21a4 -> priority: 1 
+  Thread -> id: 22bc -> priority: 1 
+  Thread -> id: 1a04 -> priority: 1 
