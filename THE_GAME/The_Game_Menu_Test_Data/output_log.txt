@@ -2,62 +2,38 @@ Initialize engine version: 5.3.5f1 (960ebf59018a)
 GfxDevice: creating device client; threaded=1
 Direct3D:
     Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce GT 740M          (ID=0x1292)
+    Renderer: NVIDIA GeForce GT 730 (ID=0x1287)
     Vendor:   NVIDIA
-    VRAM:     1997 MB
+    VRAM:     1994 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\EZ Pawn\Documents\GitHub\Legend_of_Learning\THE_GAME\The_Game_Menu_Test_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\EZ Pawn\Documents\GitHub\Legend_of_Learning\THE_GAME\The_Game_Menu_Test_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\EZ Pawn\Documents\GitHub\Legend_of_Learning\THE_GAME\The_Game_Menu_Test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\EZ Pawn\Documents\GitHub\Legend_of_Learning\THE_GAME\The_Game_Menu_Test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\EZ Pawn\Documents\GitHub\Legend_of_Learning\THE_GAME\The_Game_Menu_Test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\EZ Pawn\Documents\GitHub\Legend_of_Learning\THE_GAME\The_Game_Menu_Test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: C:\Users\EZ Pawn\Documents\GitHub\Legend_of_Learning\THE_GAME\The_Game_Menu_Test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading C:\Users\EZ Pawn\Documents\GitHub\Legend_of_Learning\THE_GAME\The_Game_Menu_Test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.042 seconds
-Platform assembly: C:\Users\EZ Pawn\Documents\GitHub\Legend_of_Learning\THE_GAME\The_Game_Menu_Test_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: C:\Users\EZ Pawn\Documents\GitHub\Legend_of_Learning\THE_GAME\The_Game_Menu_Test_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\huudw\Documents\GitHub\Legend_of_Learning\THE_GAME\The_Game_Menu_Test_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\huudw\Documents\GitHub\Legend_of_Learning\THE_GAME\The_Game_Menu_Test_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\huudw\Documents\GitHub\Legend_of_Learning\THE_GAME\The_Game_Menu_Test_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\huudw\Documents\GitHub\Legend_of_Learning\THE_GAME\The_Game_Menu_Test_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\huudw\Documents\GitHub\Legend_of_Learning\THE_GAME\The_Game_Menu_Test_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\huudw\Documents\GitHub\Legend_of_Learning\THE_GAME\The_Game_Menu_Test_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\huudw\Documents\GitHub\Legend_of_Learning\THE_GAME\The_Game_Menu_Test_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\huudw\Documents\GitHub\Legend_of_Learning\THE_GAME\The_Game_Menu_Test_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+- Completed reload, in  0.035 seconds
+Platform assembly: C:\Users\huudw\Documents\GitHub\Legend_of_Learning\THE_GAME\The_Game_Menu_Test_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\huudw\Documents\GitHub\Legend_of_Learning\THE_GAME\The_Game_Menu_Test_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
+XInput1_3.dll not found. Trying XInput9_1_0.dll instead...
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.489233 ms
+UnloadTime: 0.895399 ms
 Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.600829 ms
+UnloadTime: 3.216226 ms
 
-Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 236.
-Total: 0.218957 ms (FindLiveObjects: 0.014967 ms CreateObjectMapping: 0.008125 ms MarkObjects: 0.192015 ms  DeleteObjects: 0.002993 ms)
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 241.
+Total: 0.225652 ms (FindLiveObjects: 0.019230 ms CreateObjectMapping: 0.007511 ms MarkObjects: 0.195305 ms  DeleteObjects: 0.003305 ms)
 
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.938696 ms
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 193.
-Total: 0.189022 ms (FindLiveObjects: 0.020954 ms CreateObjectMapping: 0.007697 ms MarkObjects: 0.154382 ms  DeleteObjects: 0.005559 ms)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.335706 ms
-
-Unloading 6 unused Assets to reduce memory usage. Loaded Objects now: 381.
-Total: 0.157803 ms (FindLiveObjects: 0.011118 ms CreateObjectMapping: 0.014112 ms MarkObjects: 0.124446 ms  DeleteObjects: 0.007697 ms)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.756088 ms
-
-Unloading 186 unused Assets to reduce memory usage. Loaded Objects now: 193.
-Total: 0.775760 ms (FindLiveObjects: 0.045331 ms CreateObjectMapping: 0.041909 ms MarkObjects: 0.387880 ms  DeleteObjects: 0.299784 ms)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.621805 ms
-
-Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 236.
-Total: 0.427224 ms (FindLiveObjects: 0.028652 ms CreateObjectMapping: 0.015395 ms MarkObjects: 0.377189 ms  DeleteObjects: 0.005131 ms)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.762931 ms
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 212.
-Total: 0.381465 ms (FindLiveObjects: 0.028652 ms CreateObjectMapping: 0.015395 ms MarkObjects: 0.325015 ms  DeleteObjects: 0.011118 ms)
+NullReferenceException: Object reference not set to an instance of an object
+  at LoginMenuScript.Start () [0x00000] in <filename unknown>:0 
+ 
+(Filename:  Line: -1)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 2088 -> priority: 1 
-  Thread -> id: 2d30 -> priority: 1 
+  Thread -> id: 13f8 -> priority: 1 
+  Thread -> id: 21a4 -> priority: 1 

@@ -4,25 +4,27 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class LoginMenuScript : MonoBehaviour {
-    public Button submit;
+    public Button signin;
     public Button guestLogin;
     public Button pwdReset;
     public Button register;
     public Button back;
 	// Use this for initialization
 	void Start () {
-        submit = submit.GetComponent<Button>();
+        signin = signin.GetComponent<Button>();
         guestLogin = guestLogin.GetComponent<Button>();
         pwdReset = pwdReset.GetComponent<Button>();
         register = register.GetComponent<Button>();
         back = back.GetComponent<Button>();
 	}
-
-    public void submitPressed() {
-        //do something with login info
-        SceneManager.LoadScene(2);
+    public void signinPressed() { 
+    
     }
 
+    public void exitPressed() {
+        Application.Quit();
+    }
+    
     public void guestLoginPressed() {
         //continue without saving
         SceneManager.LoadScene(2);
