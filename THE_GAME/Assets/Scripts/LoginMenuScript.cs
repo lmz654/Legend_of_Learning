@@ -2,15 +2,18 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using usermanager;
+using System;
 
 public class LoginMenuScript : MonoBehaviour {
+    public static Authenticator auth;
     public Button signin;
     public Button guestLogin;
     public Button pwdReset;
     public Button register;
     public Button back;
     public Button quit;
-    public Text username;
+    public Text email;
     public Text password;
     public Text status;
 	// Use this for initialization
@@ -22,15 +25,42 @@ public class LoginMenuScript : MonoBehaviour {
         back = back.GetComponent<Button>();
         quit = quit.GetComponent<Button>();
         status = status.GetComponent<Text>();
+        auth = new Authenticator();
 	}
-    public void signinPressed() { 
-    
+    public void signinPressed() {
+        try
+        {
+            switch (auth.login(email.text, password.text))
+            {
+                case 0:
+                    status.text = "email/password is wrong!";
+                    break;
+                case 1:
+                    status.text = "successful!";
+                    break;
+                case 2:
+                    status.text = "Missing Field!";
+                    break;
+                case 3:
+                    status.text = "Need confirm code!";
+                    break;
+                case 4:
+                    status.text = "login with temppass!";
+                    break;
+                case 5:
+                    status.text = "User deactivate!";
+                    break;
+
+            }
+        }catch(Exception ex){
+            if (ex.Message.Length < 100)
+                status.text = ex.Message;
+            else
+                status.text = ex.Message.Substring(0, 96) + "...";
+        }
     }
 
     public void quitPressed() {
-        Application.Quit();
-    }
-    public void exitPressed() {
         Application.Quit();
     }
     

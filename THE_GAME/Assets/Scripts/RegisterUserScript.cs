@@ -2,15 +2,23 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using usermanager;
+using System;
+using EASendMail;
+using System.Threading;
+
 
 public class RegisterUserScript : MonoBehaviour {
+    public static string number;
+    public static Authenticator auth;
     public Button submit;
     public Button back;
     public Button quit;
-    public Text username;
+    public Text email;
     public Text password;
     public Text confirmpass;
     public Text phonenumber;
+    public Text status;
     public Toggle sendtoemail;
     public Toggle sendtophone;
     // Use this for initialization
@@ -18,7 +26,9 @@ public class RegisterUserScript : MonoBehaviour {
         submit = submit.GetComponent<Button>();
         back = back.GetComponent<Button>();
         quit = quit.GetComponent<Button>();
-        username = username.GetComponent<Text>();
+        status = status.GetComponent<Text>();
+        status.text = "Enter info!";
+        email = email.GetComponent<Text>();
         password = password.GetComponent<Text>();
         confirmpass = confirmpass.GetComponent<Text>();
         phonenumber = phonenumber.GetComponent<Text>();
@@ -27,7 +37,8 @@ public class RegisterUserScript : MonoBehaviour {
         sendtoemail.isOn = true;
         sendtophone = sendtophone.GetComponent<Toggle>();
         sendtophone.isOn = false;
-
+        number = "";
+        auth = new Authenticator();
 	}
     public void quitPressed() {
         Application.Quit();
@@ -42,8 +53,75 @@ public class RegisterUserScript : MonoBehaviour {
             phonenumber.enabled = false;
         }
     }
+    static void sendcodetophone() {
+        try
+        {
+             auth.sendccodetophone("2105485241", "sdaf");
+        }catch(Exception ex){
+            throw ex;
+        }
+    }
     public void submitPressed() {
         //do something with user info
+        string emails = email.text.Trim();
+        string passwords = password.text.Trim();
+         if (sendtoemail.isOn == false && sendtophone.isOn == false) {
+            status.text = "Send confirming code missing!";
+        }else if(password.text.CompareTo(confirmpass.text)==0){
+            try
+            {
+                switch (auth.register(emails,passwords))
+                {
+                    case 1:
+                       
+                            string result="";
+                            status.text = "Enter Info";
+                            try
+                            {
+                                try {
+                                    User us = auth.getuser();
+                                    if (sendtoemail.isOn == true)
+                                    {
+                                        auth.sendccodetoemail(null,null);
+                                    }
+                                }catch(Exception ex){
+                                    result+= "Cannot send confirm code to email. ";
+                                }
+                                string number = phonenumber.text.Trim();
+                                if(sendtophone.isOn==true){
+                                    if (!string.IsNullOrEmpty(number))
+                                    {
+                                        number = phonenumber.text;
+                                        Thread t = new Thread(new ThreadStart(sendcodetophone));
+                                        t.Start();
+                                    }
+                                }
+                                SceneManager.LoadScene("LoginScreen");
+                            }catch(Exception ex){
+                                result+= "cannot send confirm code to phone. ";
+                            }
+                            Debug.Log("result");
+                        break;
+                    case 2:
+                        status.text = "Missing field!";
+                        break;
+                    case 3:
+                        status.text = "Invalid email!";
+                        break;
+                    case 4:
+                        status.text = "the email is already used!";
+                        break;
+                }
+            }
+            catch(Exception ex) {
+                if (ex.Message.Length < 100)
+                    status.text = ex.Message;
+                else
+                    status.text = ex.Message.Substring(0, 96) + "...";
+            }
+        }else{
+            status.text = "Confirm password do not match to password!";
+        }
     }
 
     public void backPressed() {

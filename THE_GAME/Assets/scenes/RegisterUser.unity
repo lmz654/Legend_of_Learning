@@ -192,10 +192,11 @@ MonoBehaviour:
   submit: {fileID: 1366278665}
   back: {fileID: 1926808226}
   quit: {fileID: 1475507700}
-  username: {fileID: 1900914270}
+  email: {fileID: 1900914270}
   password: {fileID: 2106714566}
   confirmpass: {fileID: 95304256}
   phonenumber: {fileID: 560930912}
+  status: {fileID: 1490271105}
   sendtoemail: {fileID: 1689625188}
   sendtophone: {fileID: 1007072767}
 --- !u!114 &93057127
@@ -2065,7 +2066,7 @@ GameObject:
   - 114: {fileID: 1480453080}
   - 114: {fileID: 1480453079}
   m_Layer: 5
-  m_Name: Username
+  m_Name: email
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2129,13 +2130,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1480453080}
   m_TextComponent: {fileID: 1900914270}
   m_Placeholder: {fileID: 65060474}
-  m_ContentType: 0
+  m_ContentType: 6
   m_InputType: 0
   m_AsteriskChar: 42
-  m_KeyboardType: 0
+  m_KeyboardType: 7
   m_LineType: 0
   m_HideMobileInput: 0
-  m_CharacterValidation: 0
+  m_CharacterValidation: 5
   m_CharacterLimit: 0
   m_OnEndEdit:
     m_PersistentCalls:
@@ -2198,7 +2199,7 @@ GameObject:
   - 222: {fileID: 1490271106}
   - 114: {fileID: 1490271105}
   m_Layer: 5
-  m_Name: Text
+  m_Name: status
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2254,7 +2255,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter Info
+  m_Text: Enter Info!
 --- !u!222 &1490271106
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2714,7 +2715,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Username:'
+  m_Text: 'Email:'
 --- !u!222 &1821507327
 CanvasRenderer:
   m_ObjectHideFlags: 0
