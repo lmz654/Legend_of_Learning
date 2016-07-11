@@ -150,7 +150,7 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 
 --- !u!222 &65060475
@@ -192,9 +192,9 @@ MonoBehaviour:
   submit: {fileID: 1366278665}
   back: {fileID: 1926808226}
   quit: {fileID: 1475507700}
-  email: {fileID: 1900914270}
-  password: {fileID: 2106714566}
-  confirmpass: {fileID: 95304256}
+  email: {fileID: 1480453079}
+  password: {fileID: 1331442965}
+  confirmpass: {fileID: 667102595}
   phonenumber: {fileID: 560930912}
   status: {fileID: 1490271105}
   sendtoemail: {fileID: 1689625188}
@@ -2856,7 +2856,7 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 0
     m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 
 --- !u!222 &1900914271

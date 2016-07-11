@@ -14,9 +14,9 @@ public class RegisterUserScript : MonoBehaviour {
     public Button submit;
     public Button back;
     public Button quit;
-    public Text email;
-    public Text password;
-    public Text confirmpass;
+    public InputField email;
+    public InputField password;
+    public InputField confirmpass;
     public Text phonenumber;
     public Text status;
     public Toggle sendtoemail;
@@ -28,9 +28,9 @@ public class RegisterUserScript : MonoBehaviour {
         quit = quit.GetComponent<Button>();
         status = status.GetComponent<Text>();
         status.text = "Enter info!";
-        email = email.GetComponent<Text>();
-        password = password.GetComponent<Text>();
-        confirmpass = confirmpass.GetComponent<Text>();
+        email = email.GetComponent<InputField>();
+        password = password.GetComponent<InputField>();
+        confirmpass = confirmpass.GetComponent<InputField>();
         phonenumber = phonenumber.GetComponent<Text>();
         phonenumber.enabled = false;
         sendtoemail = sendtoemail.GetComponent<Toggle>();
@@ -56,7 +56,8 @@ public class RegisterUserScript : MonoBehaviour {
     static void sendcodetophone() {
         try
         {
-             auth.sendccodetophone("2105485241", "sdaf");
+            Debug.Log(number);
+             auth.sendccodetophone(number,null);
         }catch(Exception ex){
             throw ex;
         }
@@ -70,6 +71,7 @@ public class RegisterUserScript : MonoBehaviour {
         }else if(password.text.CompareTo(confirmpass.text)==0){
             try
             {
+                Debug.Log(email.text.Trim());
                 switch (auth.register(emails,passwords))
                 {
                     case 1:
@@ -87,11 +89,12 @@ public class RegisterUserScript : MonoBehaviour {
                                 }catch(Exception ex){
                                     result+= "Cannot send confirm code to email. ";
                                 }
-                                string number = phonenumber.text.Trim();
+                                number = phonenumber.text.Trim();
                                 if(sendtophone.isOn==true){
                                     if (!string.IsNullOrEmpty(number))
                                     {
-                                        number = phonenumber.text;
+                                        number = phonenumber.text.Trim();
+                                    //Debug.Log(number);
                                         Thread t = new Thread(new ThreadStart(sendcodetophone));
                                         t.Start();
                                     }
