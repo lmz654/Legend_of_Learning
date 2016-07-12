@@ -6,7 +6,6 @@ using usermanager;
 using System;
 using EASendMail;
 using System.Threading;
-using 
 
 
 public class RegisterUserScript : MonoBehaviour {
@@ -14,7 +13,7 @@ public class RegisterUserScript : MonoBehaviour {
     public static Canvas cvv;
     public Button submit;
     public Button back;
-    //public Button quit;
+    public Button quit;
     public InputField email;
     public InputField password;
     public InputField confirmpass;
@@ -41,12 +40,7 @@ public class RegisterUserScript : MonoBehaviour {
         sendtophone = sendtophone.GetComponent<Toggle>();
         sendtophone.isOn = false;
         number = "";
-        cvv = cv.GetComponent<Canvas>();
-        cv = cv.GetComponent<Canvas>();
-        cv = cvv;
-        cv.enabled = false;
-        proc = proc.GetComponent<Text>();
-        proc.text = "Processing...";
+        cv = cv.GetComponent<Canvas>();  
 	}
     public void quitPressed() {
         //Application.Quit();
@@ -75,13 +69,12 @@ public class RegisterUserScript : MonoBehaviour {
         //do something with user info
         string emails = email.text.Trim();
         string passwords = password.text.Trim();
-<<<<<<< HEAD
+
         if (sendtoemail.isOn == false && sendtophone.isOn == false) {
             status.text = "Send confirming code missing!";
-=======
-         if (sendtoemail.isOn == false && sendtophone.isOn == false) {
+        } else if (sendtoemail.isOn == false && sendtophone.isOn == false) {
             status.text = "Select method for receiving confirmation code";
->>>>>>> origin/master
+
         }else if(password.text.CompareTo(confirmpass.text)==0){
             try
             {
