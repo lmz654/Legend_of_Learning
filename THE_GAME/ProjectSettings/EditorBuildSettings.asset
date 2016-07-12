@@ -15,3 +15,5 @@ EditorBuildSettings:
     path: Assets/scenes/RegisterUser.unity
   - enabled: 1
     path: Assets/scenes/VocabNinja.unity
+  - enabled: 1
+    path: Assets/scenes/ConfirmRegistration.unity
