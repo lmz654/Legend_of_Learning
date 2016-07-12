@@ -12,7 +12,7 @@ public class LoginMenuScript : MonoBehaviour {
     public Button pwdReset;
     public Button register;
     public Button back;
-    public Button quit;
+    //public Button quit;
     public Text email;
     public Text password;
     public Text status;
@@ -23,7 +23,7 @@ public class LoginMenuScript : MonoBehaviour {
         pwdReset = pwdReset.GetComponent<Button>();
         register = register.GetComponent<Button>();
         back = back.GetComponent<Button>();
-        quit = quit.GetComponent<Button>();
+        //quit = quit.GetComponent<Button>();
         status = status.GetComponent<Text>();
         auth = new Authenticator();
 	}
@@ -33,22 +33,23 @@ public class LoginMenuScript : MonoBehaviour {
             switch (auth.login(email.text, password.text))
             {
                 case 0:
-                    status.text = "email/password is wrong!";
+                    status.text = "Email/password is wrong";
                     break;
                 case 1:
-                    status.text = "successful!";
+                    status.text = "Login successful";
+                    SceneManager.LoadScene("GameSelect");
                     break;
                 case 2:
                     status.text = "Missing Field!";
                     break;
                 case 3:
-                    status.text = "Need confirm code!";
+                    status.text = "Please confirm registration";
                     break;
                 case 4:
-                    status.text = "login with temppass!";
+                    status.text = "login with temporary password";
                     break;
                 case 5:
-                    status.text = "User deactivate!";
+                    status.text = "User deactivated";
                     break;
 
             }
@@ -59,10 +60,11 @@ public class LoginMenuScript : MonoBehaviour {
                 status.text = ex.Message.Substring(0, 96) + "...";
         }
     }
-
-    public void quitPressed() {
-        Application.Quit();
-    }
+    /*
+     *public void quitPressed() {
+     *   Application.Quit();
+     *}
+    */
     
     public void guestLoginPressed() {
         //continue without saving

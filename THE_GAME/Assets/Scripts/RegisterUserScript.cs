@@ -13,7 +13,7 @@ public class RegisterUserScript : MonoBehaviour {
     public static Authenticator auth;
     public Button submit;
     public Button back;
-    public Button quit;
+    //public Button quit;
     public InputField email;
     public InputField password;
     public InputField confirmpass;
@@ -25,7 +25,7 @@ public class RegisterUserScript : MonoBehaviour {
     void Start () {
         submit = submit.GetComponent<Button>();
         back = back.GetComponent<Button>();
-        quit = quit.GetComponent<Button>();
+        //quit = quit.GetComponent<Button>();
         status = status.GetComponent<Text>();
         status.text = "Enter info!";
         email = email.GetComponent<InputField>();
@@ -67,7 +67,7 @@ public class RegisterUserScript : MonoBehaviour {
         string emails = email.text.Trim();
         string passwords = password.text.Trim();
          if (sendtoemail.isOn == false && sendtophone.isOn == false) {
-            status.text = "Send confirming code missing!";
+            status.text = "Select method for receiving confirmation code";
         }else if(password.text.CompareTo(confirmpass.text)==0){
             try
             {
@@ -99,20 +99,20 @@ public class RegisterUserScript : MonoBehaviour {
                                         t.Start();
                                     }
                                 }
-                                SceneManager.LoadScene("LoginScreen");
+                                SceneManager.LoadScene("ConfirmRegistration");
                             }catch(Exception ex){
-                                result+= "cannot send confirm code to phone. ";
+                                result+= "cannot send confirm code to phone ";
                             }
                             Debug.Log("result");
                         break;
                     case 2:
-                        status.text = "Missing field!";
+                        status.text = "Missing field";
                         break;
                     case 3:
-                        status.text = "Invalid email!";
+                        status.text = "Invalid email";
                         break;
                     case 4:
-                        status.text = "the email is already used!";
+                        status.text = "This email is already registered";
                         break;
                 }
             }
@@ -128,8 +128,8 @@ public class RegisterUserScript : MonoBehaviour {
     }
 
     public void backPressed() {
-        //go back to login
-        SceneManager.LoadScene(1);
+        //go back to main menu
+        SceneManager.LoadScene(0);
     }
 	
 	
