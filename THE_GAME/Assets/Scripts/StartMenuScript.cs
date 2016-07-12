@@ -2,9 +2,10 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using usermanager;
 
 public class StartMenuScript : MonoBehaviour {
-
+    public static Authenticator auth= new Authenticator();
     public Canvas quitMenu;
     public Button play;
     public Button settings;

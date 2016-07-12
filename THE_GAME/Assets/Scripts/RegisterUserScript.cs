@@ -6,11 +6,12 @@ using usermanager;
 using System;
 using EASendMail;
 using System.Threading;
+using 
 
 
 public class RegisterUserScript : MonoBehaviour {
     public static string number;
-    public static Authenticator auth;
+    public static Canvas cvv;
     public Button submit;
     public Button back;
     public Button quit;
@@ -21,6 +22,8 @@ public class RegisterUserScript : MonoBehaviour {
     public Text status;
     public Toggle sendtoemail;
     public Toggle sendtophone;
+    public Canvas cv;
+    public Text proc;
     // Use this for initialization
     void Start () {
         submit = submit.GetComponent<Button>();
@@ -38,10 +41,15 @@ public class RegisterUserScript : MonoBehaviour {
         sendtophone = sendtophone.GetComponent<Toggle>();
         sendtophone.isOn = false;
         number = "";
-        auth = new Authenticator();
+        cvv = cv.GetComponent<Canvas>();
+        cv = cv.GetComponent<Canvas>();
+        cv = cvv;
+        cv.enabled = false;
+        proc = proc.GetComponent<Text>();
+        proc.text = "Processing...";
 	}
     public void quitPressed() {
-        Application.Quit();
+        //Application.Quit();
     }
     public void sendtophonechange() {
         if (sendtophone.isOn == true)
@@ -57,22 +65,22 @@ public class RegisterUserScript : MonoBehaviour {
         try
         {
             Debug.Log(number);
-             auth.sendccodetophone(number,null);
+             StartMenuScript.auth.sendccodetophone(number,null);
         }catch(Exception ex){
             throw ex;
         }
     }
+    
     public void submitPressed() {
         //do something with user info
         string emails = email.text.Trim();
         string passwords = password.text.Trim();
-         if (sendtoemail.isOn == false && sendtophone.isOn == false) {
+        if (sendtoemail.isOn == false && sendtophone.isOn == false) {
             status.text = "Send confirming code missing!";
         }else if(password.text.CompareTo(confirmpass.text)==0){
             try
             {
-                Debug.Log(email.text.Trim());
-                switch (auth.register(emails,passwords))
+                switch (StartMenuScript.auth.register(emails, passwords))
                 {
                     case 1:
                        
@@ -81,10 +89,10 @@ public class RegisterUserScript : MonoBehaviour {
                             try
                             {
                                 try {
-                                    User us = auth.getuser();
+                                    User us = StartMenuScript.auth.getuser();
                                     if (sendtoemail.isOn == true)
                                     {
-                                        auth.sendccodetoemail(null,null);
+                                        StartMenuScript.auth.sendccodetoemail(null, null);
                                     }
                                 }catch(Exception ex){
                                     result+= "Cannot send confirm code to email. ";
@@ -94,7 +102,6 @@ public class RegisterUserScript : MonoBehaviour {
                                     if (!string.IsNullOrEmpty(number))
                                     {
                                         number = phonenumber.text.Trim();
-                                    //Debug.Log(number);
                                         Thread t = new Thread(new ThreadStart(sendcodetophone));
                                         t.Start();
                                     }
@@ -103,7 +110,6 @@ public class RegisterUserScript : MonoBehaviour {
                             }catch(Exception ex){
                                 result+= "cannot send confirm code to phone. ";
                             }
-                            Debug.Log("result");
                         break;
                     case 2:
                         status.text = "Missing field!";
