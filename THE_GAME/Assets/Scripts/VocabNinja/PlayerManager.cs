@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 public class PlayerManager : MonoBehaviour {
 
     public float speedX;
+    public float jumpPower = 150f;
+    public Collider2D attackTrigger;
 
     [SerializeField]
     private GameObject knifePrefab;
@@ -23,6 +25,7 @@ public class PlayerManager : MonoBehaviour {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         facingRight = true;
+        attackTrigger.enabled = false;
 
     }
 
@@ -63,15 +66,17 @@ public class PlayerManager : MonoBehaviour {
             speed = 0;
         }
 
-        //Sword attack action
+       // Sword attack action
         if (Input.GetKeyDown(KeyCode.D))
         {
             anim.SetInteger("State", 2);
+            attackTrigger.enabled = true;
             swordSound.Play();
         }
         if (Input.GetKeyUp(KeyCode.D))
         {
             anim.SetInteger("State", 0);
+            attackTrigger.enabled = false;
         }
 
         //Throw action
@@ -83,6 +88,14 @@ public class PlayerManager : MonoBehaviour {
         if (Input.GetKeyUp(KeyCode.W))
         {
             anim.SetInteger("State", 0);
+        }
+
+
+        //Jumping
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            anim.SetInteger("State", 4);
+            rb.AddForce(Vector2.up * jumpPower);
         }
     }
 
