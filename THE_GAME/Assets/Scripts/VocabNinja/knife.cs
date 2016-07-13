@@ -5,6 +5,7 @@ public class knife : MonoBehaviour {
 
     [SerializeField]
     private float speed;
+    bool facingRight;
 
     private Rigidbody2D myRigidbody;
 
@@ -25,7 +26,12 @@ public class knife : MonoBehaviour {
     {
         this.direction = direction;
     }
-	
+
+     void OnCollisionEnter2D(Collision2D col) {
+            Destroy(gameObject);
+        
+    }
+
 
 
     //Delete the knife after it leaves the visable region

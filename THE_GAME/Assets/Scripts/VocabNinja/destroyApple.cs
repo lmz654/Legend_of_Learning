@@ -4,10 +4,11 @@ using System.Collections;
 public class destroyApple : MonoBehaviour
 {
 
-   
+    private bool slice;
 
     private Rigidbody2D myRigidbody;
 
+   
 
 
     // Use this for initialization
@@ -18,6 +19,24 @@ public class destroyApple : MonoBehaviour
     }
 
 
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        Debug.Log("collision name" + col.gameObject.tag);
+
+        if (col.gameObject.tag == "weapon")
+        {
+            Destroy(gameObject);
+        }
+
+        if (col.gameObject.name == "Ground")
+        {
+            Destroy(gameObject);
+        }
+
+        
+        
+    }
+    /*
     public void Slice(bool slice)
     {
         if (slice == true)
@@ -25,7 +44,7 @@ public class destroyApple : MonoBehaviour
             gameObject.GetComponent<Animation>().Play("SlicedApple");
         }
     }
-
+   */
 
     //Delete the knife after it leaves the visable region
     void OnBecameInvisible()
