@@ -27,7 +27,7 @@ public class RegisterUserScript : MonoBehaviour {
         back = back.GetComponent<Button>();
         //quit = quit.GetComponent<Button>();
         status = status.GetComponent<Text>();
-        status.text = "Enter info!";
+        //status.text = "Enter info!";
         email = email.GetComponent<InputField>();
         password = password.GetComponent<InputField>();
         confirmpass = confirmpass.GetComponent<InputField>();
@@ -67,8 +67,6 @@ public class RegisterUserScript : MonoBehaviour {
         string passwords = password.text.Trim();
 
         if (sendtoemail.isOn == false && sendtophone.isOn == false) {
-            status.text = "Send confirming code missing!";
-        } else if (sendtoemail.isOn == false && sendtophone.isOn == false) {
             status.text = "Select method for receiving confirmation code";
 
         }else if(password.text.CompareTo(confirmpass.text)==0){
@@ -89,7 +87,7 @@ public class RegisterUserScript : MonoBehaviour {
                                         StartMenuScript.auth.sendccodetoemail(null, null);
                                     }
                                 }catch(Exception ex){
-                                    result+= "Cannot send confirm code to email. ";
+                                    result+= "Cannot send confirmation code to email. ";
                                 }
                                 number = phonenumber.text.Trim();
                                 if(sendtophone.isOn==true){
@@ -102,7 +100,7 @@ public class RegisterUserScript : MonoBehaviour {
                                 }
                                 SceneManager.LoadScene("ConfirmRegistration");
                             }catch(Exception ex){
-                                result+= "cannot send confirm code to phone ";
+                                result+= "cannot send confirmation code to phone ";
                             }
                         break;
                     case 2:

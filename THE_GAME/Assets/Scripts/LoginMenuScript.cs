@@ -43,6 +43,9 @@ public class LoginMenuScript : MonoBehaviour {
                     status.text = "Missing Field!";
                     break;
                 case 3:
+
+                    status.text = "Please confirm registration";
+
                     SceneManager.LoadScene("ConfirmRegistration");
                     break;
                 case 4:
