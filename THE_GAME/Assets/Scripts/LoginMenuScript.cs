@@ -44,6 +44,7 @@ public class LoginMenuScript : MonoBehaviour {
                     break;
                 case 3:
                     status.text = "Please confirm registration";
+                    SceneManager.LoadScene("ConfirmRegistration");
                     break;
                 case 4:
                     status.text = "login with temporary password";
