@@ -195,7 +195,7 @@ MonoBehaviour:
   email: {fileID: 1480453079}
   password: {fileID: 1331442965}
   confirmpass: {fileID: 667102595}
-  phonenumber: {fileID: 560930912}
+  phonenumber: {fileID: 560130218}
   status: {fileID: 1490271105}
   sendtoemail: {fileID: 1689625188}
   sendtophone: {fileID: 1007072767}
@@ -2130,7 +2130,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Enter Info!
 --- !u!222 &1490271106
 CanvasRenderer:
   m_ObjectHideFlags: 0

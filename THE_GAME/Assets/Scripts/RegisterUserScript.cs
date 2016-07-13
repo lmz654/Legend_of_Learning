@@ -17,12 +17,10 @@ public class RegisterUserScript : MonoBehaviour {
     public InputField email;
     public InputField password;
     public InputField confirmpass;
-    public Text phonenumber;
+    public InputField phonenumber;
     public Text status;
     public Toggle sendtoemail;
     public Toggle sendtophone;
-    public Canvas cv;
-    public Text proc;
     // Use this for initialization
     void Start () {
         submit = submit.GetComponent<Button>();
@@ -33,14 +31,13 @@ public class RegisterUserScript : MonoBehaviour {
         email = email.GetComponent<InputField>();
         password = password.GetComponent<InputField>();
         confirmpass = confirmpass.GetComponent<InputField>();
-        phonenumber = phonenumber.GetComponent<Text>();
+        phonenumber = phonenumber.GetComponent<InputField>();
         phonenumber.enabled = false;
         sendtoemail = sendtoemail.GetComponent<Toggle>();
         sendtoemail.isOn = true;
         sendtophone = sendtophone.GetComponent<Toggle>();
         sendtophone.isOn = false;
         number = "";
-        cv = cv.GetComponent<Canvas>();  
 	}
     public void quitPressed() {
         //Application.Quit();
@@ -58,7 +55,6 @@ public class RegisterUserScript : MonoBehaviour {
     static void sendcodetophone() {
         try
         {
-            Debug.Log(number);
              StartMenuScript.auth.sendccodetophone(number,null);
         }catch(Exception ex){
             throw ex;

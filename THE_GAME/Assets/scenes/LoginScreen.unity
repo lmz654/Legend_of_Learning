@@ -1412,9 +1412,8 @@ MonoBehaviour:
   pwdReset: {fileID: 1297673492}
   register: {fileID: 2011956076}
   back: {fileID: 1396516477}
-  quit: {fileID: 0}
-  email: {fileID: 1991061412}
-  password: {fileID: 712750823}
+  email: {fileID: 1691667236}
+  password: {fileID: 933317985}
   status: {fileID: 1938663432}
 --- !u!114 &1814573410
 MonoBehaviour:

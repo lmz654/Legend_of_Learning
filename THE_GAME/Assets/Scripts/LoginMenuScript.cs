@@ -6,15 +6,14 @@ using usermanager;
 using System;
 
 public class LoginMenuScript : MonoBehaviour {
-    public static Authenticator auth;
     public Button signin;
     public Button guestLogin;
     public Button pwdReset;
     public Button register;
     public Button back;
     //public Button quit;
-    public Text email;
-    public Text password;
+    public InputField email;
+    public InputField password;
     public Text status;
 	// Use this for initialization
 	void Start () {
@@ -23,27 +22,28 @@ public class LoginMenuScript : MonoBehaviour {
         pwdReset = pwdReset.GetComponent<Button>();
         register = register.GetComponent<Button>();
         back = back.GetComponent<Button>();
+        email = email.GetComponent<InputField>();
+        password = password.GetComponent<InputField>();
         //quit = quit.GetComponent<Button>();
         status = status.GetComponent<Text>();
-        auth = new Authenticator();
 	}
     public void signinPressed() {
         try
         {
-            switch (auth.login(email.text, password.text))
+            switch (StartMenuScript.auth.login(email.text, password.text))
             {
                 case 0:
                     status.text = "Email/password is wrong";
                     break;
                 case 1:
                     status.text = "Login successful";
-                    SceneManager.LoadScene("GameSelect");
+                    SceneManager.LoadScene(2);
                     break;
                 case 2:
                     status.text = "Missing Field!";
                     break;
                 case 3:
-                    status.text = "Please confirm registration";
+                    SceneManager.LoadScene("ConfirmRegistration");
                     break;
                 case 4:
                     status.text = "login with temporary password";

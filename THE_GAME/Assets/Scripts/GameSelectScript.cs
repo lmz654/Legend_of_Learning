@@ -31,6 +31,7 @@ public class GameSelectScript : MonoBehaviour {
 
     public void logoutPressed() {
         //logout button pressed
+        StartMenuScript.auth = new usermanager.Authenticator();
         SceneManager.LoadScene(1);
     }
 	
