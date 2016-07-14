@@ -7,8 +7,7 @@ public class destroyApple : MonoBehaviour
     private bool slice;
 
     private Rigidbody2D myRigidbody;
-
-   
+    //Animator anim;
 
 
     // Use this for initialization
@@ -16,35 +15,33 @@ public class destroyApple : MonoBehaviour
     {
 
         myRigidbody = GetComponent<Rigidbody2D>();
+        //anim = GetComponent<Animator>();
     }
 
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log("collision name" + col.gameObject.tag);
-
-        if (col.gameObject.tag == "weapon")
-        {
-            Destroy(gameObject);
-        }
+        Debug.Log("collision name" + col.gameObject.name);
 
         if (col.gameObject.name == "Ground")
         {
+            //anim.SetInteger("state",1);
             Destroy(gameObject);
+            
         }
+        
 
-        
-        
+
     }
-    /*
     public void Slice(bool slice)
     {
         if (slice == true)
         {
-            gameObject.GetComponent<Animation>().Play("SlicedApple");
+            //Debug.Log("in Slice");
+            //anim.SetInteger("State", 2);
+            Destroy(gameObject);
         }
     }
-   */
 
     //Delete the knife after it leaves the visable region
     void OnBecameInvisible()

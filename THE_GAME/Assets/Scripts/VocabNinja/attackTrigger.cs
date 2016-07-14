@@ -4,7 +4,7 @@ using System.Collections;
 public class attackTrigger : MonoBehaviour {
 
     public bool dmg;
-/*
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.isTrigger != true && col.CompareTag("Apple"))
@@ -13,5 +13,5 @@ public class attackTrigger : MonoBehaviour {
             col.SendMessageUpwards("Slice", dmg);
         }
     }
-*/
+
 }

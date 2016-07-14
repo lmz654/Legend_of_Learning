@@ -27,8 +27,13 @@ public class knife : MonoBehaviour {
         this.direction = direction;
     }
 
-     void OnCollisionEnter2D(Collision2D col) {
+     void OnTriggerEnter2D(Collider2D col) {
+        Debug.Log("collision with " + col.gameObject.name);
+        if (col.gameObject.name != "Ninja Girl")
+        {
             Destroy(gameObject);
+            Destroy(col.gameObject);
+        }
         
     }
 
