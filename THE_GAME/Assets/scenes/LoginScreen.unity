@@ -269,7 +269,7 @@ GameObject:
   - 114: {fileID: 181142689}
   - 114: {fileID: 181142688}
   m_Layer: 5
-  m_Name: submit
+  m_Name: request
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -332,8 +332,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: requestCodePressed
+      - m_Target: {fileID: 1814573409}
+        m_MethodName: submitpress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -377,7 +377,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Submit
+  m_Text: Request
 --- !u!222 &181142690
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -395,7 +395,7 @@ GameObject:
   - 222: {fileID: 210243875}
   - 114: {fileID: 210243874}
   m_Layer: 5
-  m_Name: Resend Code
+  m_Name: newpass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -451,7 +451,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Resend Code
+  m_Text: Forget Pass
 --- !u!222 &210243875
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -532,7 +532,7 @@ GameObject:
   - 114: {fileID: 626216311}
   - 114: {fileID: 626216310}
   m_Layer: 5
-  m_Name: Phone Number
+  m_Name: emailinput
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2145,7 +2145,8 @@ MonoBehaviour:
   email: {fileID: 1691667236}
   password: {fileID: 933317985}
   submit: {fileID: 181142688}
-  status: {fileID: 1938663432}
+  lstatus: {fileID: 1938663432}
+  nstatus: {fileID: 1134396847}
   cancel: {fileID: 1902541746}
 --- !u!114 &1814573410
 MonoBehaviour:
@@ -2394,7 +2395,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1814573409}
         m_MethodName: cancelpress
         m_Mode: 1
         m_Arguments:
@@ -2457,7 +2458,7 @@ GameObject:
   - 222: {fileID: 1938663433}
   - 114: {fileID: 1938663432}
   m_Layer: 5
-  m_Name: status
+  m_Name: lstatus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
