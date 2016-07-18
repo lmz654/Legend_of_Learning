@@ -11,10 +11,13 @@ public class LoginMenuScript : MonoBehaviour {
     public Button pwdReset;
     public Button register;
     public Button back;
-    //public Button quit;
+    public Canvas rpass;
     public InputField email;
     public InputField password;
-    public Text status;
+    public Button submit;
+    public Text lstatus;
+    public Text nstatus;
+    public Button cancel;
 	// Use this for initialization
 	void Start () {
         signin = signin.GetComponent<Button>();
@@ -24,43 +27,56 @@ public class LoginMenuScript : MonoBehaviour {
         back = back.GetComponent<Button>();
         email = email.GetComponent<InputField>();
         password = password.GetComponent<InputField>();
-        //quit = quit.GetComponent<Button>();
-        status = status.GetComponent<Text>();
+        rpass = rpass.GetComponent<Canvas>();
+        rpass.enabled = false;
+        submit = submit.GetComponent<Button>();
+        lstatus = lstatus.GetComponent<Text>();
+        nstatus = nstatus.GetComponent<Text>();
+        cancel = cancel.GetComponent<Button>();
 	}
+    public void cancelpress() {
+        rpass.enabled = false;
+    }
+    public void submitpress() {
+        rpass.enabled = false;
+    }
+    public void showrequestnewpass() {
+        rpass.enabled = true;
+    }
     public void signinPressed() {
         try
         {
             switch (StartMenuScript.auth.login(email.text, password.text))
             {
                 case 0:
-                    status.text = "Email/password is wrong";
+                    lstatus.text = "Email/password is wrong";
                     break;
                 case 1:
-                    status.text = "Login successful";
+                    lstatus.text = "Login successful";
                     SceneManager.LoadScene(2);
                     break;
                 case 2:
-                    status.text = "Missing Field!";
+                    lstatus.text = "Missing Field!";
                     break;
                 case 3:
 
-                    status.text = "Please confirm registration";
+                    lstatus.text = "Please confirm registration";
 
                     SceneManager.LoadScene("ConfirmRegistration");
                     break;
                 case 4:
-                    status.text = "login with temporary password";
+                    lstatus.text = "login with temporary password";
                     break;
                 case 5:
-                    status.text = "User deactivated";
+                    lstatus.text = "User deactivated";
                     break;
 
             }
         }catch(Exception ex){
             if (ex.Message.Length < 100)
-                status.text = ex.Message;
+                lstatus.text = ex.Message;
             else
-                status.text = ex.Message.Substring(0, 96) + "...";
+                lstatus.text = ex.Message.Substring(0, 96) + "...";
         }
     }
     /*
@@ -76,6 +92,7 @@ public class LoginMenuScript : MonoBehaviour {
 
     public void pwdResetPressed() {
         //go to password reset page
+        rpass.enabled = true;
     }
 
     public void registerPressed() {
