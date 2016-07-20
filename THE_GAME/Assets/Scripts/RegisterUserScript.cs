@@ -74,7 +74,7 @@ public class RegisterUserScript : MonoBehaviour {
             {
                 switch (StartMenuScript.auth.register(emails, passwords))
                 {
-                    case 1:
+                    case usermanager.finalvar.SUCCESS:
                        
                             string result="";
                             status.text = "Enter Info";
@@ -103,13 +103,13 @@ public class RegisterUserScript : MonoBehaviour {
                                 result+= "cannot send confirmation code to phone ";
                             }
                         break;
-                    case 2:
+                    case usermanager.finalvar.MISSING_FIELD:
                         status.text = "Missing field";
                         break;
-                    case 3:
+                    case usermanager.finalvar.INVALID_EMAIL:
                         status.text = "Invalid email";
                         break;
-                    case 4:
+                    case usermanager.finalvar.EXIST_EMAIL:
                         status.text = "This email is already registered";
                         break;
                 }

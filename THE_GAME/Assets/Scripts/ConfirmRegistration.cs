@@ -58,19 +58,17 @@ public class ConfirmRegistration : MonoBehaviour {
 
     public void submitPressed() {
         //submit conf code
-        Debug.Log(confCode.text.Trim());
-        Debug.Log(StartMenuScript.auth.getuser().user_confirm_code);
         try
         {
             switch (StartMenuScript.auth.codeconfirm(confCode.text.Trim()))
             {
-                case 0:
+                case usermanager.finalvar.WRONG:
                     cstatus.text = "Wrong code!";
                     break;
-                case 1:
+                case usermanager.finalvar.SUCCESS:
                     SceneManager.LoadScene(2);
                     break;
-                case 2:
+                case usermanager.finalvar.MISSING_FIELD:
                     cstatus.text = "Please enter confirm code";
                     break;
             }
