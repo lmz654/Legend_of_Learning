@@ -11,10 +11,22 @@ public class LoginMenuScript : MonoBehaviour {
     public Button pwdReset;
     public Button register;
     public Button back;
-    //public Button quit;
+    public Text lstatus;
     public InputField email;
     public InputField password;
-    public Text status;
+    //forget pass
+    public Canvas rpass;
+    public InputField remail;
+    public Button request; 
+    public Text nstatus;
+    public Button ncancel;
+    //enter newpass
+    public Canvas epass;
+    public Button esubmit;
+    public Text estatus;
+    public Button ecancel;
+    public InputField enewpass;
+    public InputField ecnewpass;
 	// Use this for initialization
 	void Start () {
         signin = signin.GetComponent<Button>();
@@ -24,43 +36,107 @@ public class LoginMenuScript : MonoBehaviour {
         back = back.GetComponent<Button>();
         email = email.GetComponent<InputField>();
         password = password.GetComponent<InputField>();
-        //quit = quit.GetComponent<Button>();
-        status = status.GetComponent<Text>();
+        remail = remail.GetComponent<InputField>();
+        rpass = rpass.GetComponent<Canvas>();
+        rpass.enabled = false;
+        request = request.GetComponent<Button>();
+        lstatus = lstatus.GetComponent<Text>();
+        nstatus = nstatus.GetComponent<Text>();
+        ncancel = ncancel.GetComponent<Button>();
+        //enter new pass
+        epass = epass.GetComponent<Canvas>();
+        epass.enabled = false;
+        esubmit = esubmit.GetComponent<Button>();
+        estatus = estatus.GetComponent<Text>();
+        ecancel = ecancel.GetComponent<Button>();
+        enewpass = enewpass.GetComponent<InputField>();
+        ecnewpass = ecnewpass.GetComponent<InputField>();
 	}
+    public void rcancelpress() {
+        rpass.enabled = false;
+    }
+    public void requestpress() {
+        try
+        {
+            switch(StartMenuScript.auth.forgetpass(remail.text.Trim())){
+                case usermanager.finalvar.MISSING_FIELD:
+                    nstatus.text = "Missing Field!";
+                    break;
+                case usermanager.finalvar.INVALID_EMAIL:
+                    nstatus.text = "The email is invalid!";
+                    break;
+                case usermanager.finalvar.NOT_EXIST_EMAIL:
+                    nstatus.text = "The email is not registered!";
+                    break;
+                case usermanager.finalvar.SUCCESS:
+                    rpass.enabled = false;
+                    break;
+            }
+        }
+        catch (Exception ex) {
+            if (ex.Message.Length < 50)
+                nstatus.text = ex.Message;
+            else
+                nstatus.text = ex.Message.Substring(0, 45) + "...";
+        }
+        
+    }
+    public void ecancelpress() {
+        epass.enabled = false;
+    }
+    public void esubmitpress() {
+        try {
+            //if(enewpass.text.Trim().CompareTo(ecnewpass.text.Trim())){
+            //    switch(StartMenuScript.auth.enternewpass(enewpass.text.Trim())){
+            
+            //    }
+            //}else{
+            
+            //}
+        }catch(Exception ex){
+            if (ex.Message.Length < 50)
+                estatus.text = ex.Message;
+            else
+                estatus.text = ex.Message.Substring(0, 45) + "...";
+        }
+    }
+    public void showrequestnewpass() {
+        rpass.enabled = true;
+    }
     public void signinPressed() {
         try
         {
             switch (StartMenuScript.auth.login(email.text, password.text))
             {
-                case 0:
-                    status.text = "Email/password is wrong";
+                case usermanager.finalvar.WRONG:
+                    lstatus.text = "Email/password is wrong";
                     break;
-                case 1:
-                    status.text = "Login successful";
+                case usermanager.finalvar.SUCCESS:
+                    lstatus.text = "Login successful";
                     SceneManager.LoadScene(2);
                     break;
-                case 2:
-                    status.text = "Missing Field!";
+                case usermanager.finalvar.MISSING_FIELD:
+                    lstatus.text = "Missing Field!";
                     break;
-                case 3:
+                case usermanager.finalvar.NEED_CODE:
 
-                    status.text = "Please confirm registration";
+                    lstatus.text = "Please confirm registration";
 
                     SceneManager.LoadScene("ConfirmRegistration");
                     break;
-                case 4:
-                    status.text = "login with temporary password";
+                case usermanager.finalvar.TEMP_CODE_LOGIN:
+                    lstatus.text = "login with temporary password";
                     break;
-                case 5:
-                    status.text = "User deactivated";
+                case usermanager.finalvar.USER_DEACTIVATE:
+                    lstatus.text = "User deactivated";
                     break;
 
             }
         }catch(Exception ex){
             if (ex.Message.Length < 100)
-                status.text = ex.Message;
+                lstatus.text = ex.Message;
             else
-                status.text = ex.Message.Substring(0, 96) + "...";
+                lstatus.text = ex.Message.Substring(0, 96) + "...";
         }
     }
     /*
@@ -68,7 +144,6 @@ public class LoginMenuScript : MonoBehaviour {
      *   Application.Quit();
      *}
     */
-    
     public void guestLoginPressed() {
         //continue without saving
         SceneManager.LoadScene(2);
@@ -76,6 +151,7 @@ public class LoginMenuScript : MonoBehaviour {
 
     public void pwdResetPressed() {
         //go to password reset page
+        rpass.enabled = true;
     }
 
     public void registerPressed() {

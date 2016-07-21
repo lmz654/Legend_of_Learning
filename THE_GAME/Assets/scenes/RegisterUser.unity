@@ -199,8 +199,6 @@ MonoBehaviour:
   status: {fileID: 1490271105}
   sendtoemail: {fileID: 1689625188}
   sendtophone: {fileID: 1007072767}
-  cv: {fileID: 0}
-  proc: {fileID: 0}
 --- !u!114 &93057127
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2841,7 +2839,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Main Menu
+  m_Text: Back
 --- !u!222 &1926808228
 CanvasRenderer:
   m_ObjectHideFlags: 0
