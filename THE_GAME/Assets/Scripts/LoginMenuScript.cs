@@ -11,14 +11,22 @@ public class LoginMenuScript : MonoBehaviour {
     public Button pwdReset;
     public Button register;
     public Button back;
-    public Canvas rpass;
+    public Text lstatus;
     public InputField email;
     public InputField password;
+    //forget pass
+    public Canvas rpass;
     public InputField remail;
-    public Button request;
-    public Text lstatus;
+    public Button request; 
     public Text nstatus;
-    public Button cancel;
+    public Button ncancel;
+    //enter newpass
+    public Canvas epass;
+    public Button esubmit;
+    public Text estatus;
+    public Button ecancel;
+    public InputField enewpass;
+    public InputField ecnewpass;
 	// Use this for initialization
 	void Start () {
         signin = signin.GetComponent<Button>();
@@ -34,9 +42,17 @@ public class LoginMenuScript : MonoBehaviour {
         request = request.GetComponent<Button>();
         lstatus = lstatus.GetComponent<Text>();
         nstatus = nstatus.GetComponent<Text>();
-        cancel = cancel.GetComponent<Button>();
+        ncancel = ncancel.GetComponent<Button>();
+        //enter new pass
+        epass = epass.GetComponent<Canvas>();
+        epass.enabled = false;
+        esubmit = esubmit.GetComponent<Button>();
+        estatus = estatus.GetComponent<Text>();
+        ecancel = ecancel.GetComponent<Button>();
+        enewpass = enewpass.GetComponent<InputField>();
+        ecnewpass = ecnewpass.GetComponent<InputField>();
 	}
-    public void cancelpress() {
+    public void rcancelpress() {
         rpass.enabled = false;
     }
     public void requestpress() {
@@ -64,6 +80,25 @@ public class LoginMenuScript : MonoBehaviour {
                 nstatus.text = ex.Message.Substring(0, 45) + "...";
         }
         
+    }
+    public void ecancelpress() {
+        epass.enabled = false;
+    }
+    public void esubmitpress() {
+        try {
+            //if(enewpass.text.Trim().CompareTo(ecnewpass.text.Trim())){
+            //    switch(StartMenuScript.auth.enternewpass(enewpass.text.Trim())){
+            
+            //    }
+            //}else{
+            
+            //}
+        }catch(Exception ex){
+            if (ex.Message.Length < 50)
+                estatus.text = ex.Message;
+            else
+                estatus.text = ex.Message.Substring(0, 45) + "...";
+        }
     }
     public void showrequestnewpass() {
         rpass.enabled = true;

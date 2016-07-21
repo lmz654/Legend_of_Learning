@@ -127,7 +127,7 @@ public class RegisterUserScript : MonoBehaviour {
 
     public void backPressed() {
         //go back to main menu
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("LoginScreen");
     }
 	
 	
