@@ -172,7 +172,7 @@ GameObject:
   - 114: {fileID: 77346643}
   - 114: {fileID: 77346642}
   m_Layer: 5
-  m_Name: Background
+  m_Name: rBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -269,7 +269,7 @@ GameObject:
   - 114: {fileID: 165457806}
   - 114: {fileID: 165457805}
   m_Layer: 5
-  m_Name: Cancel
+  m_Name: eCancel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -333,7 +333,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1814573409}
-        m_MethodName: cancelpress
+        m_MethodName: ecancelpress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -597,7 +597,7 @@ GameObject:
   - 114: {fileID: 332636075}
   - 114: {fileID: 332636074}
   m_Layer: 5
-  m_Name: nsubmit
+  m_Name: esubmit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -661,7 +661,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1814573409}
-        m_MethodName: requestpress
+        m_MethodName: esubmitpress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -723,7 +723,7 @@ GameObject:
   - 222: {fileID: 405519166}
   - 114: {fileID: 405519165}
   m_Layer: 5
-  m_Name: npstatus
+  m_Name: epstatus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -744,7 +744,7 @@ RectTransform:
   m_RootOrder: 5
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000007867813, y: 13}
+  m_AnchoredPosition: {x: -0.000007867813, y: 22}
   m_SizeDelta: {x: 453, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &405519165
@@ -859,7 +859,7 @@ GameObject:
   - 222: {fileID: 583086611}
   - 114: {fileID: 583086610}
   m_Layer: 5
-  m_Name: passPrompt
+  m_Name: epassPrompt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -880,7 +880,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -92, y: -32}
+  m_AnchoredPosition: {x: -92, y: -23}
   m_SizeDelta: {x: 139.3, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &583086610
@@ -957,7 +957,7 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 63, y: -41}
+  m_AnchoredPosition: {x: 34, y: -41}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &626216310
@@ -1067,7 +1067,7 @@ GameObject:
   - 222: {fileID: 638411777}
   - 114: {fileID: 638411776}
   m_Layer: 5
-  m_Name: 'cpassPrompt '
+  m_Name: 'ecpassPrompt '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1088,7 +1088,7 @@ RectTransform:
   m_RootOrder: 7
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -103, y: -66}
+  m_AnchoredPosition: {x: -103, y: -61}
   m_SizeDelta: {x: 164, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &638411776
@@ -1162,7 +1162,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.5000002}
+  m_AnchoredPosition: {x: -2, y: -0.5000002}
   m_SizeDelta: {x: -20, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &712750823
@@ -1239,7 +1239,7 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -34.7}
+  m_AnchoredPosition: {x: 4, y: -34.7}
   m_SizeDelta: {x: 241, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &933317985
@@ -1423,7 +1423,7 @@ GameObject:
   - 222: {fileID: 1000076733}
   - 114: {fileID: 1000076732}
   m_Layer: 5
-  m_Name: PhonePrompt
+  m_Name: rPhonePrompt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1444,7 +1444,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -92, y: -41}
+  m_AnchoredPosition: {x: -125, y: -41}
   m_SizeDelta: {x: 139.3, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1000076732
@@ -2260,7 +2260,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Main Menu
+  m_Text: Cancel
 --- !u!222 &1396516479
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2280,7 +2280,7 @@ GameObject:
   - 114: {fileID: 1416795907}
   - 114: {fileID: 1416795906}
   m_Layer: 5
-  m_Name: Background
+  m_Name: eBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2377,7 +2377,7 @@ GameObject:
   - 114: {fileID: 1457783855}
   - 114: {fileID: 1457783854}
   m_Layer: 5
-  m_Name: npassinput
+  m_Name: epassinput
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2400,7 +2400,7 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 63, y: -32}
+  m_AnchoredPosition: {x: 63, y: -24}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1457783854
@@ -2584,7 +2584,7 @@ GameObject:
   - 222: {fileID: 1521601842}
   - 114: {fileID: 1521601841}
   m_Layer: 5
-  m_Name: newpass
+  m_Name: enewpass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2605,7 +2605,7 @@ RectTransform:
   m_RootOrder: 2
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 61}
+  m_AnchoredPosition: {x: 0, y: 72}
   m_SizeDelta: {x: 248, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1521601841
@@ -3005,7 +3005,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.1, y: 1.5}
+  m_AnchoredPosition: {x: 4, y: 1.5}
   m_SizeDelta: {x: 241, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1691667236
@@ -3190,7 +3190,7 @@ GameObject:
   - 114: {fileID: 1806729323}
   - 114: {fileID: 1806729322}
   m_Layer: 5
-  m_Name: 'cnpassinput '
+  m_Name: 'ecnpassinput '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3213,7 +3213,7 @@ RectTransform:
   m_RootOrder: 8
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 64, y: -66}
+  m_AnchoredPosition: {x: 64, y: -60}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1806729322
@@ -3347,14 +3347,20 @@ MonoBehaviour:
   pwdReset: {fileID: 1297673492}
   register: {fileID: 2011956076}
   back: {fileID: 1396516477}
-  rpass: {fileID: 2012579432}
+  lstatus: {fileID: 1938663432}
   email: {fileID: 1691667236}
   password: {fileID: 933317985}
+  rpass: {fileID: 2012579432}
   remail: {fileID: 626216310}
   request: {fileID: 181142688}
-  lstatus: {fileID: 1938663432}
-  nstatus: {fileID: 1134396847}
-  cancel: {fileID: 1902541746}
+  rstatus: {fileID: 1134396847}
+  rcancel: {fileID: 1902541746}
+  epass: {fileID: 1384382067}
+  esubmit: {fileID: 332636074}
+  estatus: {fileID: 405519165}
+  ecancel: {fileID: 165457805}
+  enewpass: {fileID: 1457783854}
+  ecnewpass: {fileID: 1806729322}
 --- !u!114 &1814573410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3539,7 +3545,7 @@ GameObject:
   - 114: {fileID: 1902541747}
   - 114: {fileID: 1902541746}
   m_Layer: 5
-  m_Name: Cancel
+  m_Name: rCancel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3603,7 +3609,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1814573409}
-        m_MethodName: cancelpress
+        m_MethodName: rcancelpress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3721,7 +3727,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Enter Info!
 --- !u!222 &1938663433
 CanvasRenderer:
   m_ObjectHideFlags: 0

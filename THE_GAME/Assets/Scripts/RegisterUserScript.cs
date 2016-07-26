@@ -70,27 +70,37 @@ public class RegisterUserScript : MonoBehaviour {
             status.text = "Select method for receiving confirmation code";
 
         }else if(password.text.CompareTo(confirmpass.text)==0){
-            try
+            if (sendtophone.isOn && string.IsNullOrEmpty(phonenumber.text.Trim()))
             {
-                switch (StartMenuScript.auth.register(emails, passwords))
+                status.text = "Missing phone number!";
+            }
+            else
+            {
+                try
                 {
-                    case usermanager.finalvar.SUCCESS:
-                       
-                            string result="";
+                    switch (StartMenuScript.auth.register(emails, passwords))
+                    {
+                        case usermanager.finalvar.SUCCESS:
+
+                            string result = "";
                             status.text = "Enter Info";
                             try
                             {
-                                try {
+                                try
+                                {
                                     User us = StartMenuScript.auth.getuser();
                                     if (sendtoemail.isOn == true)
                                     {
                                         StartMenuScript.auth.sendccodetoemail(null, null);
                                     }
-                                }catch(Exception ex){
-                                    result+= "Cannot send confirmation code to email. ";
+                                }
+                                catch (Exception ex)
+                                {
+                                    result += "Cannot send confirmation code to email. ";
                                 }
                                 number = phonenumber.text.Trim();
-                                if(sendtophone.isOn==true){
+                                if (sendtophone.isOn == true)
+                                {
                                     if (!string.IsNullOrEmpty(number))
                                     {
                                         number = phonenumber.text.Trim();
@@ -99,26 +109,30 @@ public class RegisterUserScript : MonoBehaviour {
                                     }
                                 }
                                 SceneManager.LoadScene("ConfirmRegistration");
-                            }catch(Exception ex){
-                                result+= "cannot send confirmation code to phone ";
                             }
-                        break;
-                    case usermanager.finalvar.MISSING_FIELD:
-                        status.text = "Missing field";
-                        break;
-                    case usermanager.finalvar.INVALID_EMAIL:
-                        status.text = "Invalid email";
-                        break;
-                    case usermanager.finalvar.EXIST_EMAIL:
-                        status.text = "This email is already registered";
-                        break;
+                            catch (Exception ex)
+                            {
+                                result += "cannot send confirmation code to phone ";
+                            }
+                            break;
+                        case usermanager.finalvar.MISSING_FIELD:
+                            status.text = "Missing field";
+                            break;
+                        case usermanager.finalvar.INVALID_EMAIL:
+                            status.text = "Invalid email";
+                            break;
+                        case usermanager.finalvar.EXIST_EMAIL:
+                            status.text = "This email is already registered";
+                            break;
+                    }
                 }
-            }
-            catch(Exception ex) {
-                if (ex.Message.Length < 100)
-                    status.text = ex.Message;
-                else
-                    status.text = ex.Message.Substring(0, 96) + "...";
+                catch (Exception ex)
+                {
+                    if (ex.Message.Length < 100)
+                        status.text = ex.Message;
+                    else
+                        status.text = ex.Message.Substring(0, 96) + "...";
+                }
             }
         }else{
             status.text = "Confirm password do not match to password!";

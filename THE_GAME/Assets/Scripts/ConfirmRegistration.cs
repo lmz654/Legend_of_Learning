@@ -96,39 +96,42 @@ public class ConfirmRegistration : MonoBehaviour {
         bool success = false;
         int sendop = 0;
         if (toEmail.isOn == true){
-            sendop = 1;
+            sendop = finalvar.TO_EMAIL;
             success = true;
         }
         if(toPhone.isOn == true){
             if (sendop == 0)
             {
-                sendop = 2;
+                sendop = finalvar.TO_PHONE;
             }
             else {
-                sendop = 3;
+                sendop = finalvar.TO_BOTH;
             }
             success = true;
         }
-
         if (success == false)
         {
             rstatus.text = "Missing receiving option!";
         }
         else {
-            try
-            {
-                Thread t = new Thread(new ThreadStart(sendrequest));
-                number = phone.text.Trim();
-                op = sendop;
-                t.Start();
+            if(string.IsNullOrEmpty(phone.text.Trim())&&toPhone.isOn){
+                rstatus.text = "Missing phone number!";
+            }else{
+                try
+                {
+                    Thread t = new Thread(new ThreadStart(sendrequest));
+                    number = phone.text.Trim();
+                    op = sendop;
+                    t.Start();
+                }
+                catch (Exception ex) {
+                    if (ex.Message.Length < 100)
+                        rstatus.text = ex.Message;
+                    else
+                        rstatus.text = ex.Message.Substring(0, 96) + "...";
+                }
+                resendCanvas.enabled = false;
             }
-            catch (Exception ex) {
-                if (ex.Message.Length < 100)
-                    rstatus.text = ex.Message;
-                else
-                    rstatus.text = ex.Message.Substring(0, 96) + "...";
-            }
-            resendCanvas.enabled = false;
             //StartMenuScript.auth.requestcode(phone.text.Trim(), 2);
         }
        
