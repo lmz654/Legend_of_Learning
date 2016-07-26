@@ -10,7 +10,9 @@ public class PlayerManager : MonoBehaviour
     public Collider2D attackTrigger;
 
     [SerializeField]
-    private GameObject knifePrefab;
+    private GameObject RknifePrefab;
+    [SerializeField]
+    private GameObject LknifePrefab;
 
     public AudioSource swordSound;
 
@@ -138,13 +140,13 @@ public class PlayerManager : MonoBehaviour
     {
         if (facingRight)
         {
-            GameObject tmp = (GameObject)Instantiate(knifePrefab, transform.position, Quaternion.identity);
-            tmp.GetComponent<knife>().Initialize(Vector2.right, speedX);
+            GameObject tmp = (GameObject)Instantiate(RknifePrefab, transform.position, Quaternion.identity);
+            tmp.GetComponent<knife>().Initialize(Vector2.right);
         }
         else
         {
-            GameObject tmp = (GameObject)Instantiate(knifePrefab, transform.position, Quaternion.identity);
-            tmp.GetComponent<knife>().Initialize(Vector2.left, speedX);
+            GameObject tmp = (GameObject)Instantiate(LknifePrefab, transform.position, Quaternion.identity);
+            tmp.GetComponent<knife>().Initialize(Vector2.left);
         }
     }
 

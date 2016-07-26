@@ -988,7 +988,8 @@ MonoBehaviour:
   speedX: 15
   jumpPower: 700
   attackTrigger: {fileID: 106057315}
-  knifePrefab: {fileID: 184868, guid: 9d35c09bf88b24044a4a0c6fa1de3829, type: 2}
+  RknifePrefab: {fileID: 184868, guid: 9d35c09bf88b24044a4a0c6fa1de3829, type: 2}
+  LknifePrefab: {fileID: 129118, guid: 54e265768e701dd4f8225aa77d7e7a8b, type: 2}
   swordSound: {fileID: 1852875895}
 --- !u!61 &1661452439
 BoxCollider2D:

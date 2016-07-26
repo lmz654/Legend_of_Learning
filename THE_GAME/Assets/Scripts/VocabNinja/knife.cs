@@ -22,10 +22,9 @@ public class knife : MonoBehaviour {
         myRigidbody.velocity = direction * speed;
     }
 
-    public void Initialize(Vector2 direction, float speed)
+    public void Initialize(Vector2 direction)
     {
         this.direction = direction;
-        this.speed = speed;
     }
 
      void OnTriggerEnter2D(Collider2D col) {
