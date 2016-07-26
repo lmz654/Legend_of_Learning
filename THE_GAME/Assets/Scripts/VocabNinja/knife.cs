@@ -22,14 +22,15 @@ public class knife : MonoBehaviour {
         myRigidbody.velocity = direction * speed;
     }
 
-    public void Initialize(Vector2 direction)
+    public void Initialize(Vector2 direction, float speed)
     {
         this.direction = direction;
+        this.speed = speed;
     }
 
      void OnTriggerEnter2D(Collider2D col) {
-        Debug.Log("collision with " + col.gameObject.name);
-        if (col.gameObject.name != "Ninja Girl")
+        Debug.Log(gameObject.name + " collision with " + col.gameObject.name);
+        if (col.gameObject.name != "Ninja Girl" && col.gameObject.name != "knife(Clone)")
         {
             Destroy(gameObject);
             Destroy(col.gameObject);

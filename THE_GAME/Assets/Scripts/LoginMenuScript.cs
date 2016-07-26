@@ -54,6 +54,7 @@ public class LoginMenuScript : MonoBehaviour {
 	}
     public void rcancelpress() {
         rpass.enabled = false;
+
     }
     public void requestpress() {
         try
@@ -63,10 +64,10 @@ public class LoginMenuScript : MonoBehaviour {
                     nstatus.text = "Missing Field!";
                     break;
                 case usermanager.finalvar.INVALID_EMAIL:
-                    nstatus.text = "The email is invalid!";
+                    nstatus.text = "Email is invalid!";
                     break;
                 case usermanager.finalvar.NOT_EXIST_EMAIL:
-                    nstatus.text = "The email is not registered!";
+                    nstatus.text = "Email is not registered!";
                     break;
                 case usermanager.finalvar.SUCCESS:
                     rpass.enabled = false;
