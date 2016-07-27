@@ -12,7 +12,7 @@ public class bulletHit : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter(Collider other){
+	void OnTriggerEnter2D(Collider2D other){
 		
 		GameObject scoring = GameObject.Find("Score");
 

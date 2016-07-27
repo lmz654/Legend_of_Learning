@@ -1,18 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+[RequireComponent(typeof(Rigidbody2D))]
 public class DeathByTime : MonoBehaviour {
 
+	[SerializeField]
+	private float speed = 10;
 	public float timeDeath;
-
 	private Vector2 direction;
-	private float speed;
 
-	private Rigidbody myRigidbody;
+	private Rigidbody2D myRigidbody;
 
 	// Use this for initialization
 	void Start () {
-		myRigidbody = GetComponent<Rigidbody> ();
+		myRigidbody = GetComponent<Rigidbody2D> ();
 		Destroy (gameObject, timeDeath);
 	}
 
@@ -20,8 +20,7 @@ public class DeathByTime : MonoBehaviour {
 		myRigidbody.velocity = direction * speed;
 	}
 
-	public void Initialize(Vector2 direction, float speed){
+	public void Initialize(Vector2 direction){
 		this.direction = direction;
-		this.speed = speed;
 	}
 }

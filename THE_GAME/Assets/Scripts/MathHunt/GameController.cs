@@ -34,12 +34,12 @@ public class GameController : MonoBehaviour {
 					count = Random.Range (0, 2);
 					if(spawns[count].position.x < 0){
 						GameObject obj = Instantiate (bird [rand], spawns [count].position, spawns [count].rotation) as GameObject;
-						obj.GetComponent<DeathByTime>().Initialize(Vector2.right,speedx);
+						obj.GetComponent<DeathByTime>().Initialize(Vector2.right);
 					}else{	
 						var offset = spawns [count].rotation;
 						offset.y = 180;
 						GameObject obj2 = Instantiate (bird [rand], spawns [count].position, offset) as GameObject;
-						obj2.GetComponent<DeathByTime>().Initialize(Vector2.left,speedx);
+						obj2.GetComponent<DeathByTime>().Initialize(Vector2.left);
 
 					}
 				}
