@@ -24,9 +24,9 @@ public class Shoot : MonoBehaviour {
 			Rigidbody bull;
 			transform.position = Camera.main.ScreenToWorldPoint (Input.mousePosition);
 			Camera.main.ScreenToWorldPoint (Input.mousePosition);
-			bull = Instantiate (bullet, transform.position, transform.rotation) as Rigidbody;
+			bull = Instantiate (bullet, transform.position, bulletSpawn.rotation) as Rigidbody;
 			bull.AddForce (bulletSpawn.forward * bulletSpeed);
-			Destroy (bull.gameObject, 2);
+			Destroy (bull.gameObject, 0.6f);
 		}
 
 
