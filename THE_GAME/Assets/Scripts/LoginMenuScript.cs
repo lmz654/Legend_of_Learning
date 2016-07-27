@@ -64,17 +64,11 @@ public class LoginMenuScript : MonoBehaviour {
                     rstatus.text = "Missing Field!";
                     break;
                 case usermanager.finalvar.INVALID_EMAIL:
-<<<<<<< HEAD
+
                     rstatus.text = "The email is invalid!";
                     break;
                 case usermanager.finalvar.NOT_EXIST_EMAIL:
                     rstatus.text = "The email is not registered!";
-=======
-                    nstatus.text = "Email is invalid!";
-                    break;
-                case usermanager.finalvar.NOT_EXIST_EMAIL:
-                    nstatus.text = "Email is not registered!";
->>>>>>> origin/master
                     break;
                 case usermanager.finalvar.SUCCESS:
                     rpass.enabled = false;
