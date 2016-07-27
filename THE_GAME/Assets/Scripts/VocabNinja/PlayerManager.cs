@@ -2,25 +2,29 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-public class PlayerManager : MonoBehaviour {
+public class PlayerManager : MonoBehaviour
+{
 
     public float speedX;
     public float jumpPower = 150f;
     public Collider2D attackTrigger;
 
     [SerializeField]
-    private GameObject knifePrefab;
+    private GameObject RknifePrefab;
+    [SerializeField]
+    private GameObject LknifePrefab;
 
     public AudioSource swordSound;
 
-    bool facingRight, Jumping;
+    bool facingRight, Jumping, canJump;
     float speed;
 
     Animator anim;
     Rigidbody2D rb;
 
     // Use this for initialization
-    void Start() {
+    void Start()
+    {
 
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -30,7 +34,8 @@ public class PlayerManager : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update()
+    {
 
         //player movement
         MovePlayer(speed);
@@ -66,7 +71,7 @@ public class PlayerManager : MonoBehaviour {
             speed = 0;
         }
 
-       // Sword attack action
+        // Sword attack action
         if (Input.GetKeyDown(KeyCode.D))
         {
             anim.SetInteger("State", 2);
@@ -92,8 +97,10 @@ public class PlayerManager : MonoBehaviour {
 
 
         //Jumping
-        if (Input.GetKeyDown(KeyCode.Q))
+
+        if (Input.GetKeyDown(KeyCode.Q) && canJump)
         {
+            canJump = false;
             anim.SetInteger("State", 4);
             rb.AddForce(Vector2.up * jumpPower);
         }
@@ -133,14 +140,22 @@ public class PlayerManager : MonoBehaviour {
     {
         if (facingRight)
         {
-           GameObject tmp = (GameObject)Instantiate(knifePrefab, transform.position, Quaternion.identity);
+            GameObject tmp = (GameObject)Instantiate(RknifePrefab, transform.position, Quaternion.identity);
             tmp.GetComponent<knife>().Initialize(Vector2.right);
         }
         else
         {
-            GameObject tmp = (GameObject)Instantiate(knifePrefab, transform.position, Quaternion.identity);
+            GameObject tmp = (GameObject)Instantiate(LknifePrefab, transform.position, Quaternion.identity);
             tmp.GetComponent<knife>().Initialize(Vector2.left);
         }
     }
 
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.name == "Ground")
+        {
+            canJump = true;
+
+        }
+    }
 }
