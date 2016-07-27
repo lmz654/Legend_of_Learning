@@ -5,19 +5,21 @@ public class SpawnWord : MonoBehaviour {
 
     public GameObject wordPrefab;
     public GameObject missingPrefab;
+    public GameObject missing_let;
     public Sprite[] letterSprites;
     public Transform[] WordSpawnPoints;
     public string[] words = new string[]{"bad", "bed", "dead"};
     public char[] key = new char[]{'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
     public Sprite missing_letter;
-    public char[] chars;
+    public static char[] chars;
     //public ArrayList StringLetters;
-    public int charLength;
+    public static int charLength;
     public int randomCharIndx;
     public int tempIndx;
     public int tempIndx2;
     public int tempIndx3;
     public int tempIndx4;
+    public GameObject missing3;
 
     // Use this for initialization
     void Start () {
@@ -106,26 +108,28 @@ public class SpawnWord : MonoBehaviour {
         {
             randomCharIndx = Random.Range(0, charLength);
         }
-        GameObject missing_let = (GameObject)Instantiate(missingPrefab, WordSpawnPoints[randomCharIndx].position, Quaternion.identity);
+        missing_let = (GameObject)Instantiate(missingPrefab, WordSpawnPoints[randomCharIndx].position, Quaternion.identity);
         missing_let.name = missing_letter.name;
         missing_let.GetComponent<SpriteRenderer>().sprite = missing_letter;
     }
 
 
-    public void CorrectLetter(string correct)
+    public static void CorrectLetter(string correct)
     {
-        //     Debug.Log("collision name" + col.gameObject.name);
-     //   Debug.Log("Inside CorrectLetter");
-       // if (correct == true)
-      //  {
-      //      if (correct == chars[tempIndx].ToString())
-      //      {
-            //anim.SetInteger("state",1);
-       //     Destroy(missing_letter);
+        SpawnWord instance = new SpawnWord();
 
-         //   }
-    //    }
-        
+        Debug.Log("Inside CorrectLetter " + correct);
+
+        for (int k = 0; k < charLength; k++)
+        {
+            if (correct == chars[k].ToString().ToUpper())
+            {
+                Debug.Log("wwwwwww");
+                instance.missing3.SetActive(false);
+            }
+        }
+
+
     }
 
 }
