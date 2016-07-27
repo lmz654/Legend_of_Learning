@@ -333,7 +333,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1814573409}
-        m_MethodName: cancelpress
+        m_MethodName: ecancelpress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -417,7 +417,7 @@ RectTransform:
   m_RootOrder: 3
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 79, y: -106}
+  m_AnchoredPosition: {x: 85, y: -106}
   m_SizeDelta: {x: 102.61, y: 19.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &181142688
@@ -578,7 +578,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Forget Pass
+  m_Text: New Password Request
 --- !u!222 &210243875
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -880,7 +880,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -92, y: -32}
+  m_AnchoredPosition: {x: -135.1, y: -32}
   m_SizeDelta: {x: 139.3, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &583086610
@@ -957,7 +957,7 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 63, y: -41}
+  m_AnchoredPosition: {x: 19.9, y: -41}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &626216310
@@ -1423,7 +1423,7 @@ GameObject:
   - 222: {fileID: 1000076733}
   - 114: {fileID: 1000076732}
   m_Layer: 5
-  m_Name: PhonePrompt
+  m_Name: Emailprompt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1444,7 +1444,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -92, y: -41}
+  m_AnchoredPosition: {x: -135.1, y: -41}
   m_SizeDelta: {x: 139.3, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1000076732
@@ -2400,7 +2400,7 @@ RectTransform:
   m_RootOrder: 4
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 63, y: -32}
+  m_AnchoredPosition: {x: 19.9, y: -32}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1457783854
@@ -2640,7 +2640,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Forget Pass
+  m_Text: Reset Password
 --- !u!222 &1521601842
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3347,14 +3347,20 @@ MonoBehaviour:
   pwdReset: {fileID: 1297673492}
   register: {fileID: 2011956076}
   back: {fileID: 1396516477}
-  rpass: {fileID: 2012579432}
+  lstatus: {fileID: 1938663432}
   email: {fileID: 1691667236}
   password: {fileID: 933317985}
+  rpass: {fileID: 2012579432}
   remail: {fileID: 626216310}
   request: {fileID: 181142688}
-  lstatus: {fileID: 1938663432}
   nstatus: {fileID: 1134396847}
-  cancel: {fileID: 1902541746}
+  ncancel: {fileID: 1902541746}
+  epass: {fileID: 1384382067}
+  esubmit: {fileID: 332636074}
+  estatus: {fileID: 405519165}
+  ecancel: {fileID: 165457805}
+  enewpass: {fileID: 1457783854}
+  ecnewpass: {fileID: 1806729322}
 --- !u!114 &1814573410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3560,7 +3566,7 @@ RectTransform:
   m_RootOrder: 6
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -52, y: -106}
+  m_AnchoredPosition: {x: -85, y: -106}
   m_SizeDelta: {x: 102.61, y: 19.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1902541746
@@ -3603,7 +3609,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1814573409}
-        m_MethodName: cancelpress
+        m_MethodName: rcancelpress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

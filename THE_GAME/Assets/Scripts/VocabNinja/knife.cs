@@ -28,8 +28,8 @@ public class knife : MonoBehaviour {
     }
 
      void OnTriggerEnter2D(Collider2D col) {
-        Debug.Log("collision with " + col.gameObject.name);
-        if (col.gameObject.name != "Ninja Girl")
+        Debug.Log(gameObject.name + " collision with " + col.gameObject.name);
+        if (col.gameObject.name != "Ninja Girl" && col.gameObject.name != "knife(Clone)")
         {
             Destroy(gameObject);
             Destroy(col.gameObject);

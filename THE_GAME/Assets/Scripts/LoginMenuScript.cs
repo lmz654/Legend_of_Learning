@@ -18,8 +18,8 @@ public class LoginMenuScript : MonoBehaviour {
     public Canvas rpass;
     public InputField remail;
     public Button request; 
-    public Text nstatus;
-    public Button ncancel;
+    public Text rstatus;
+    public Button rcancel;
     //enter newpass
     public Canvas epass;
     public Button esubmit;
@@ -41,8 +41,8 @@ public class LoginMenuScript : MonoBehaviour {
         rpass.enabled = false;
         request = request.GetComponent<Button>();
         lstatus = lstatus.GetComponent<Text>();
-        nstatus = nstatus.GetComponent<Text>();
-        ncancel = ncancel.GetComponent<Button>();
+        rstatus = rstatus.GetComponent<Text>();
+        rcancel = rcancel.GetComponent<Button>();
         //enter new pass
         epass = epass.GetComponent<Canvas>();
         epass.enabled = false;
@@ -54,19 +54,21 @@ public class LoginMenuScript : MonoBehaviour {
 	}
     public void rcancelpress() {
         rpass.enabled = false;
+
     }
     public void requestpress() {
         try
         {
             switch(StartMenuScript.auth.forgetpass(remail.text.Trim())){
                 case usermanager.finalvar.MISSING_FIELD:
-                    nstatus.text = "Missing Field!";
+                    rstatus.text = "Missing Field!";
                     break;
                 case usermanager.finalvar.INVALID_EMAIL:
-                    nstatus.text = "The email is invalid!";
+
+                    rstatus.text = "The email is invalid!";
                     break;
                 case usermanager.finalvar.NOT_EXIST_EMAIL:
-                    nstatus.text = "The email is not registered!";
+                    rstatus.text = "The email is not registered!";
                     break;
                 case usermanager.finalvar.SUCCESS:
                     rpass.enabled = false;
@@ -75,9 +77,9 @@ public class LoginMenuScript : MonoBehaviour {
         }
         catch (Exception ex) {
             if (ex.Message.Length < 50)
-                nstatus.text = ex.Message;
+                rstatus.text = ex.Message;
             else
-                nstatus.text = ex.Message.Substring(0, 45) + "...";
+                rstatus.text = ex.Message.Substring(0, 45) + "...";
         }
         
     }
@@ -86,13 +88,23 @@ public class LoginMenuScript : MonoBehaviour {
     }
     public void esubmitpress() {
         try {
-            //if(enewpass.text.Trim().CompareTo(ecnewpass.text.Trim())){
-            //    switch(StartMenuScript.auth.enternewpass(enewpass.text.Trim())){
-            
-            //    }
-            //}else{
-            
-            //}
+            if (enewpass.text.Trim().CompareTo(ecnewpass.text.Trim())==0)
+            {
+                switch (StartMenuScript.auth.enternewpass(enewpass.text.Trim()))
+                {
+                    case finalvar.MISSING_FIELD:
+                        estatus.text= "Missing Field!";
+                        break;
+                    case finalvar.SUCCESS:
+                        estatus.text = "Changing password success!";
+                        epass.enabled = false;
+                        break;
+                }
+            }
+            else
+            {
+                estatus.text = "Password and confirm password isn't match!";
+            }
         }catch(Exception ex){
             if (ex.Message.Length < 50)
                 estatus.text = ex.Message;
@@ -126,6 +138,7 @@ public class LoginMenuScript : MonoBehaviour {
                     break;
                 case usermanager.finalvar.TEMP_CODE_LOGIN:
                     lstatus.text = "login with temporary password";
+                    epass.enabled = true;
                     break;
                 case usermanager.finalvar.USER_DEACTIVATE:
                     lstatus.text = "User deactivated";
