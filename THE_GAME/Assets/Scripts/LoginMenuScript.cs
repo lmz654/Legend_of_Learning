@@ -84,6 +84,8 @@ public class LoginMenuScript : MonoBehaviour {
         
     }
     public void ecancelpress() {
+        email.text = "";
+        password.text = "";
         epass.enabled = false;
     }
     public void esubmitpress() {
@@ -96,6 +98,9 @@ public class LoginMenuScript : MonoBehaviour {
                         estatus.text= "Missing Field!";
                         break;
                     case finalvar.SUCCESS:
+                        password.text = "";
+                        email.text = "";
+                        lstatus.text = "";
                         estatus.text = "Changing password success!";
                         epass.enabled = false;
                         break;
@@ -113,6 +118,7 @@ public class LoginMenuScript : MonoBehaviour {
         }
     }
     public void showrequestnewpass() {
+        lstatus.text = "";
         rpass.enabled = true;
     }
     public void signinPressed() {
@@ -137,7 +143,6 @@ public class LoginMenuScript : MonoBehaviour {
                     SceneManager.LoadScene("ConfirmRegistration");
                     break;
                 case usermanager.finalvar.TEMP_CODE_LOGIN:
-                    lstatus.text = "login with temporary password";
                     epass.enabled = true;
                     break;
                 case usermanager.finalvar.USER_DEACTIVATE:

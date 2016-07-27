@@ -3353,8 +3353,8 @@ MonoBehaviour:
   rpass: {fileID: 2012579432}
   remail: {fileID: 626216310}
   request: {fileID: 181142688}
-  nstatus: {fileID: 1134396847}
-  ncancel: {fileID: 1902541746}
+  rstatus: {fileID: 1134396847}
+  rcancel: {fileID: 1902541746}
   epass: {fileID: 1384382067}
   esubmit: {fileID: 332636074}
   estatus: {fileID: 405519165}
