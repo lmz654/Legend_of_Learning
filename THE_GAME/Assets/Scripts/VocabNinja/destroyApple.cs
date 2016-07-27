@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 [RequireComponent(typeof(Rigidbody2D))]
+
 public class destroyApple : MonoBehaviour
 {
-
+    public int scoreValue = 10;
     private bool slice;
 
     private Rigidbody2D myRigidbody;
@@ -28,17 +29,16 @@ public class destroyApple : MonoBehaviour
             //anim.SetInteger("state",1);
             Destroy(gameObject);
             
-        }
-        
-
-
+        }    
     }
+
     public void Slice(bool slice)
     {
         if (slice == true)
         {
             //Debug.Log("in Slice");
             //anim.SetInteger("State", 2);
+            ScoreManager.score += scoreValue;
             Destroy(gameObject);
         }
     }
