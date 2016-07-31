@@ -7,11 +7,12 @@ public class SpawnWord : MonoBehaviour {
     public GameObject missingPrefab;
     public GameObject missing_let;
     public Sprite[] letterSprites;
+    public GameObject[] missingList;
     public Transform[] WordSpawnPoints;
     public string[] words = new string[]{"bad", "bed", "dead"};
     public char[] key = new char[]{'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
     public Sprite missing_letter;
-    public static char[] chars;
+    public char[] chars;
     //public ArrayList StringLetters;
     public static int charLength;
     public int randomCharIndx;
@@ -19,17 +20,32 @@ public class SpawnWord : MonoBehaviour {
     public int tempIndx2;
     public int tempIndx3;
     public int tempIndx4;
-    public GameObject missing3;
+    public GameObject missing0;
+    public ArrayList covered;
+    public static string sliced;
+    public ArrayList hey;
+
 
     // Use this for initialization
     void Start () {
+
+        foreach(GameObject g in missingList)
+        {
+            Debug.Log("Start");
+            g.SetActive(false);
+            Debug.Log("Start222222");
+        }
+   //     missing0 = GameObject.FindGameObjectWithTag("missing0");
+    //    missing0.SetActive(false);
+
 
         MakeWord();
     }
 	
     public void MakeWord()
     {
-
+        covered = new ArrayList();
+        hey = new ArrayList();
         string letterName;
         int wordIdx = Random.Range(0, words.Length);
         string selected_word = words[wordIdx];
@@ -49,8 +65,10 @@ public class SpawnWord : MonoBehaviour {
                     Sprite letterSprite = letterSprites[j];
                     letterName = letterSprite.name;
                     GameObject newLetter = (GameObject)Instantiate(wordPrefab, WordSpawnPoints[i].position, Quaternion.identity);
+                   
                     newLetter.name = letterName;
                     newLetter.GetComponent<SpriteRenderer>().sprite = letterSprite;
+                    hey.Add(newLetter);
                 }
             }
         }
@@ -108,28 +126,55 @@ public class SpawnWord : MonoBehaviour {
         {
             randomCharIndx = Random.Range(0, charLength);
         }
-        missing_let = (GameObject)Instantiate(missingPrefab, WordSpawnPoints[randomCharIndx].position, Quaternion.identity);
-        missing_let.name = missing_letter.name;
-        missing_let.GetComponent<SpriteRenderer>().sprite = missing_letter;
+
+        //string indxx = randomCharIndx.ToString();
+      //  GameObject.FindGameObjectWithTag("missing" + indxx);
+        missingList[randomCharIndx].SetActive(true);
+        covered.Add(randomCharIndx);
     }
 
 
-    public static void CorrectLetter(string correct)
+    public static void SlicedLetter(string x)
     {
-        SpawnWord instance = new SpawnWord();
+        Debug.Log("sliced letter " + x);
+        sliced = x;
+    }
 
-        Debug.Log("Inside CorrectLetter " + correct);
+
+    public void CorrectLetter()
+    {
+        int num;
+        string correct = sliced;
+        
 
         for (int k = 0; k < charLength; k++)
         {
             if (correct == chars[k].ToString().ToUpper())
             {
-                Debug.Log("wwwwwww");
-                instance.missing3.SetActive(false);
+                num = k;
+                if (covered.Contains(k))
+                {
+                    Debug.Log("Inside CorrectLetter " + correct);
+                    missingList[k].SetActive(false);
+                    covered.Remove(k);
+                }
+
+
             }
         }
-
-
     }
 
+
+    void Update()
+    {
+        CorrectLetter();
+        if (covered.Count == 0)
+        {
+            foreach (GameObject g in hey)
+            {
+                Destroy(g);
+            }
+            MakeWord();
+        }
+    }
 }

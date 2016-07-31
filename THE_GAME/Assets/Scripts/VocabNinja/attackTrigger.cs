@@ -16,7 +16,7 @@ public class attackTrigger : MonoBehaviour {
             Debug.Log("The name is " + name);
    
 
-            SpawnWord.CorrectLetter(name);
+            SpawnWord.SlicedLetter(name);
 
 
             col.SendMessageUpwards("Slice", dmg);
