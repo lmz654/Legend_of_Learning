@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour {
 	public float waveWait;
 
 	public Transform[] spawns;
+	[SerializeField]
 	public GameObject[] bird;
 	public float speed = 1.0f;
 	public int level = 1;
