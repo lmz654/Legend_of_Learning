@@ -555,7 +555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hazardCount: 6
-  spawnWait: 2
+  spawnWait: 2.3
   startWait: 1
   waveWait: 6
   spawns:
