@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour {
 	public float spawnWait;
 	public float startWait;
 	public float waveWait;
+    private int answer;
 
 	public Transform[] spawns;
 	[SerializeField]
@@ -20,7 +21,8 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		StartCoroutine (SpawnWaves ());
+        StartCoroutine(SpawnWaves());
+        
 	}
 
 	IEnumerator SpawnWaves ()
@@ -36,11 +38,13 @@ public class GameController : MonoBehaviour {
 					if(spawns[count].position.x < 0){
 						GameObject obj = Instantiate (bird [rand], spawns [count].position, spawns [count].rotation) as GameObject;
 						obj.GetComponent<DeathByTime>().Initialize(Vector2.right);
+                        obj.guiText.text = answer;
 					}else{	
 						var offset = spawns [count].rotation;
 						offset.y = 180;
 						GameObject obj2 = Instantiate (bird [rand], spawns [count].position, offset) as GameObject;
 						obj2.GetComponent<DeathByTime>().Initialize(Vector2.left);
+                        obj2.guiText.text = answer;
 
 					}
 				}
@@ -50,6 +54,11 @@ public class GameController : MonoBehaviour {
 		}
 	}
 		
+
+    public void answerGet(int x)
+    {
+        this.answer = x;
+    }
 
 	// Update is called once per frame
 	void Update () {

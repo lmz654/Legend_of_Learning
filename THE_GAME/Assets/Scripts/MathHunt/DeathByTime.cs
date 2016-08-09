@@ -3,6 +3,9 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody2D))]
 public class DeathByTime : MonoBehaviour {
 
+    public GUIText answers;
+    private int answer;
+
 	[SerializeField]
 	private float speed = 10;
 	public float timeDeath;
@@ -23,4 +26,5 @@ public class DeathByTime : MonoBehaviour {
 	public void Initialize(Vector2 direction){
 		this.direction = direction;
 	}
+
 }
