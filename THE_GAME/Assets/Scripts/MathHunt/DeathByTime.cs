@@ -3,7 +3,6 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody2D))]
 public class DeathByTime : MonoBehaviour {
 
-    public GUIText answers;
     private int answer;
 
 	[SerializeField]

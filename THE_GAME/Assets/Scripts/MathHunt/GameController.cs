@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour {
 	public float spawnWait;
 	public float startWait;
 	public float waveWait;
+    public GameObject ans;
     private int answer;
 
 	public Transform[] spawns;
@@ -37,16 +38,18 @@ public class GameController : MonoBehaviour {
 					count = Random.Range (0, 2);
 					if(spawns[count].position.x < 0){
 						GameObject obj = Instantiate (bird [rand], spawns [count].position, spawns [count].rotation) as GameObject;
-						obj.GetComponent<DeathByTime>().Initialize(Vector2.right);
-                        obj.guiText.text = answer;
+                        obj.GetComponent<DeathByTime>().Initialize(Vector2.right);
+                        GameObject hello = Instantiate(ans, spawns[count].position, spawns[count].rotation) as GameObject; 
+                        hello.transform.parent = obj.transform;
 					}else{	
 						var offset = spawns [count].rotation;
 						offset.y = 180;
 						GameObject obj2 = Instantiate (bird [rand], spawns [count].position, offset) as GameObject;
 						obj2.GetComponent<DeathByTime>().Initialize(Vector2.left);
-                        obj2.guiText.text = answer;
+                        GameObject hello = Instantiate(ans, spawns[count].position, spawns[count].rotation) as GameObject;
+                        hello.transform.parent = obj2.transform;
 
-					}
+                    }
 				}
 				yield return new WaitForSeconds (spawnWait);
 			}

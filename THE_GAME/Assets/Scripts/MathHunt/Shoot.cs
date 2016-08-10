@@ -18,7 +18,7 @@ public class Shoot : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update (){
-        Debug.Log(Time.time);
+        
 
 		if (Input.GetMouseButtonDown (0) && Time.time > reloadTimer) {
             Debug.Log("Clicked");

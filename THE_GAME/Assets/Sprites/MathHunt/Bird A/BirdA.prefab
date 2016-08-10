@@ -14,8 +14,7 @@ GameObject:
   - 50: {fileID: 5017064}
   - 61: {fileID: 6186662}
   - 222: {fileID: 22274434}
-  - 132: {fileID: 13272716}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BirdA
   m_TagString: bird1
   m_Icon: {fileID: 0}
@@ -81,37 +80,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96ee6b4d165754a3aa17c263de72f860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  answers: {fileID: 0}
-  answer: 0
   speed: 5
   timeDeath: 7
-  direction: {x: 0, y: 0}
-  myRigidbody: {fileID: 0}
---- !u!132 &13272716
-GUIText:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 127976}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Text: 'Hello
-
-'
-  m_Anchor: 0
-  m_Alignment: 0
-  m_PixelOffset: {x: 0, y: 0}
-  m_LineSpacing: 1
-  m_TabSize: 4
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-  m_Material: {fileID: 2100000, guid: 60515b9209097e347b35d9da5b8206eb, type: 3}
-  m_FontSize: 12
-  m_FontStyle: 0
-  m_Color:
-    serializedVersion: 2
-    rgba: 4278190080
-  m_PixelCorrect: 1
-  m_RichText: 1
 --- !u!212 &21210420
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -155,7 +125,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.5}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
