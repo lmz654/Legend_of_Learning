@@ -41,14 +41,15 @@ public class GameController : MonoBehaviour {
                         obj.GetComponent<DeathByTime>().Initialize(Vector2.right);
                         GameObject hello = Instantiate(ans, spawns[count].position, spawns[count].rotation) as GameObject; 
                         hello.transform.parent = obj.transform;
+                        hello.transform.localScale = obj.transform.localScale;
 					}else{	
 						var offset = spawns [count].rotation;
 						offset.y = 180;
 						GameObject obj2 = Instantiate (bird [rand], spawns [count].position, offset) as GameObject;
 						obj2.GetComponent<DeathByTime>().Initialize(Vector2.left);
-                        GameObject hello = Instantiate(ans, spawns[count].position, spawns[count].rotation) as GameObject;
-                        hello.transform.parent = obj2.transform;
-
+                        GameObject hello2 = Instantiate(ans, spawns[count].position, spawns[count].rotation) as GameObject;
+                        hello2.transform.parent = obj2.transform;
+                        hello2.transform.localScale = obj2.transform.localScale;
                     }
 				}
 				yield return new WaitForSeconds (spawnWait);

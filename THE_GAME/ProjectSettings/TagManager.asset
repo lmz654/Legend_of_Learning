@@ -16,6 +16,11 @@ TagManager:
   - missing7
   - missing8
   - missing9
+  - SpawnPoint
+  - bird3
+  - bird4
+  - bird2
+  - bird1
   layers:
   - Default
   - TransparentFX
@@ -27,8 +32,8 @@ TagManager:
   - 
   - hideUI
   - wepsAndapples
-  - 
-  - 
+  - textLayer
+  - birdLayer
   - 
   - 
   - 

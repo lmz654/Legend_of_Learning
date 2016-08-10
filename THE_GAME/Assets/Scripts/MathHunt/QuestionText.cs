@@ -13,7 +13,6 @@ public class QuestionText : MonoBehaviour {
         int rand1 = Random.Range(0, 10);
         int rand2 = Random.Range(0, 10);
         answer = numbers[rand1] * numbers[rand2];
-
         GameObject birdy = GameObject.Find("BulletSpawn");
         GameObject controller = GameObject.Find("GameController");
         controller.SendMessageUpwards("answerGet", answer);
