@@ -42,6 +42,8 @@ public class GameController : MonoBehaviour {
                         GameObject hello = Instantiate(ans, spawns[count].position, spawns[count].rotation) as GameObject; 
                         hello.transform.parent = obj.transform;
                         hello.transform.localScale = obj.transform.localScale;
+                        MeshRenderer layerText = hello.GetComponent<MeshRenderer>();
+                        layerText.sortingOrder = 1;
 					}else{	
 						var offset = spawns [count].rotation;
 						offset.y = 180;
@@ -50,6 +52,8 @@ public class GameController : MonoBehaviour {
                         GameObject hello2 = Instantiate(ans, spawns[count].position, spawns[count].rotation) as GameObject;
                         hello2.transform.parent = obj2.transform;
                         hello2.transform.localScale = obj2.transform.localScale;
+                        MeshRenderer layerText2 = hello2.GetComponent<MeshRenderer>();
+                        layerText2.sortingOrder = 1;
                     }
 				}
 				yield return new WaitForSeconds (spawnWait);
