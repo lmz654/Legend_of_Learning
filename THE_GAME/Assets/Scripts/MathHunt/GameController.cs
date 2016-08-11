@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GameController : MonoBehaviour {
 
@@ -10,8 +11,8 @@ public class GameController : MonoBehaviour {
     public GameObject ans;
     private int answer;
 
-	public Transform[] spawns;
-	[SerializeField]
+    public Transform[] spawns;
+    [SerializeField]
 	public GameObject[] bird;
 	public float speed = 1.0f;
 	public int level = 1;
@@ -26,42 +27,49 @@ public class GameController : MonoBehaviour {
         
 	}
 
-	IEnumerator SpawnWaves ()
-	{
-		yield return new WaitForSeconds (startWait);
-		while (true)
-		{
-			for (int i = 0; i < hazardCount; i++)
-			{
-				if (level == 1) {
-					rand = Random.Range (0, 2);
-					count = Random.Range (0, 2);
-					if(spawns[count].position.x < 0){
-						GameObject obj = Instantiate (bird [rand], spawns [count].position, spawns [count].rotation) as GameObject;
+    IEnumerator SpawnWaves()
+    {
+        yield return new WaitForSeconds(startWait);
+        while (true)
+        {
+            for (int i = 0; i < hazardCount; i++)
+            {
+                if (level == 1)
+                {
+                    List<Transform> freeSpawnPoints = new List<Transform>(spawns);
+                    int index = Random.Range(0, freeSpawnPoints.Count);
+                    Transform pos = freeSpawnPoints[index];
+                    freeSpawnPoints.RemoveAt(index);
+                    rand = Random.Range(0, 2);
+                    count = Random.Range(0, 2);
+                    if (pos.position.x < 0)
+                    {
+                        GameObject obj = Instantiate(bird[rand], pos.position, pos.rotation) as GameObject;
                         obj.GetComponent<DeathByTime>().Initialize(Vector2.right);
-                        GameObject hello = Instantiate(ans, spawns[count].position, spawns[count].rotation) as GameObject; 
+                        GameObject hello = Instantiate(ans, pos.position, pos.rotation) as GameObject;
                         hello.transform.parent = obj.transform;
                         hello.transform.localScale = obj.transform.localScale;
                         MeshRenderer layerText = hello.GetComponent<MeshRenderer>();
                         layerText.sortingOrder = 1;
-					}else{	
-						var offset = spawns [count].rotation;
-						offset.y = 180;
-						GameObject obj2 = Instantiate (bird [rand], spawns [count].position, offset) as GameObject;
-						obj2.GetComponent<DeathByTime>().Initialize(Vector2.left);
-                        GameObject hello2 = Instantiate(ans, spawns[count].position, spawns[count].rotation) as GameObject;
+                    }
+                    else
+                    {
+                        var offset = pos.rotation;
+                        offset.y = 180;
+                        GameObject obj2 = Instantiate(bird[rand], pos.position, offset) as GameObject;
+                        obj2.GetComponent<DeathByTime>().Initialize(Vector2.left);
+                        GameObject hello2 = Instantiate(ans, pos.position, pos.rotation) as GameObject;
                         hello2.transform.parent = obj2.transform;
                         hello2.transform.localScale = obj2.transform.localScale;
                         MeshRenderer layerText2 = hello2.GetComponent<MeshRenderer>();
                         layerText2.sortingOrder = 1;
                     }
-				}
-				yield return new WaitForSeconds (spawnWait);
-			}
-			yield return new WaitForSeconds (waveWait);
-		}
-	}
-		
+                }
+                yield return new WaitForSeconds(spawnWait);
+            }
+            yield return new WaitForSeconds(waveWait);
+        }
+    }
 
     public void answerGet(int x)
     {
