@@ -35,9 +35,13 @@ public class QuestionText : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update() { 
-
-
 	}
+
+
+    public void correctAnswer()
+    {
+
+    }
 
 
 }

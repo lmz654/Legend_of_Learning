@@ -365,7 +365,7 @@ GUIText:
   m_GameObject: {fileID: 404796975}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: 'Question: '
+  m_Text: 12 x 12 =
   m_Anchor: 1
   m_Alignment: 1
   m_PixelOffset: {x: 0, y: 0}
