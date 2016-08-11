@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour {
 	public float waveWait;
     public GameObject ans;
     private int answer;
+    private int[] multipleChoice;
 
     public Transform[] spawns;
     [SerializeField]
@@ -32,16 +33,16 @@ public class GameController : MonoBehaviour {
         yield return new WaitForSeconds(startWait);
         while (true)
         {
+            List<Transform> freeSpawnPoints = new List<Transform>(spawns);
             for (int i = 0; i < hazardCount; i++)
             {
                 if (level == 1)
                 {
-                    List<Transform> freeSpawnPoints = new List<Transform>(spawns);
                     int index = Random.Range(0, freeSpawnPoints.Count);
+                    Debug.Log(answer);
                     Transform pos = freeSpawnPoints[index];
                     freeSpawnPoints.RemoveAt(index);
                     rand = Random.Range(0, 2);
-                    count = Random.Range(0, 2);
                     if (pos.position.x < 0)
                     {
                         GameObject obj = Instantiate(bird[rand], pos.position, pos.rotation) as GameObject;
@@ -50,6 +51,7 @@ public class GameController : MonoBehaviour {
                         hello.transform.parent = obj.transform;
                         hello.transform.localScale = obj.transform.localScale;
                         MeshRenderer layerText = hello.GetComponent<MeshRenderer>();
+                        hello.GetComponent<TextMesh>().text = "Hello";
                         layerText.sortingOrder = 1;
                     }
                     else

@@ -110,7 +110,7 @@ GUIText:
   m_GameObject: {fileID: 149756875}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: 'Score:'
+  m_Text: 
   m_Anchor: 1
   m_Alignment: 1
   m_PixelOffset: {x: 0, y: 0}
@@ -322,7 +322,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 392667958}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: 1.8, z: -1}
+  m_LocalPosition: {x: -10, y: 0.4, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -365,7 +365,7 @@ GUIText:
   m_GameObject: {fileID: 404796975}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: 12 x 12 =
+  m_Text: 
   m_Anchor: 1
   m_Alignment: 1
   m_PixelOffset: {x: 0, y: 0}
@@ -530,7 +530,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 955701506}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: 4.5, z: -1}
+  m_LocalPosition: {x: -10, y: 3.7, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -558,7 +558,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 978772724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: 3.2, z: -1}
+  m_LocalPosition: {x: -10, y: 2, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -586,7 +586,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 984683868}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: 0.4, z: -1}
+  m_LocalPosition: {x: -10, y: -1.3, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -619,10 +619,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 125848c9086b543408c4513e96c48288, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hazardCount: 12
-  spawnWait: 2
+  hazardCount: 3
+  spawnWait: 0.2
   startWait: 1
-  waveWait: 6
+  waveWait: 3
   ans: {fileID: 151926, guid: 00da5fd798479c44e8871795cd34c0a3, type: 2}
   spawns:
   - {fileID: 392667959}
@@ -705,7 +705,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1240883763}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: -1, z: -1}
+  m_LocalPosition: {x: -10, y: -3, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
