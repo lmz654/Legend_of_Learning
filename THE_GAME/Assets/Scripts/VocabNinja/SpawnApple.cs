@@ -23,14 +23,14 @@ public class SpawnApple : MonoBehaviour {
         int arrayIdx = Random.Range(0, appleSprites.Length);
         int weightedRand = Random.Range(1, 100);
         Sprite appleSprite;
-        if (weightedRand <= 0)
+        if (weightedRand <= 40)
             appleSprite = appleSprites[arrayIdx];
         else
         {
             
-            arrayIdx = Random.Range(0, spawnWord.missingList.Length);
-            Debug.Log("correct letters!!!!!!!!!!!!!" + spawnWord.missingList.Length + " " + arrayIdx);
-            appleSprite = appleSprites[arrayIdx];
+            arrayIdx = Random.Range(0, spawnWord.letterIndexes.Count);
+            Debug.Log("correct letters!!!!!!!!!!!!!" + spawnWord.letterIndexes.Count + " " + arrayIdx);
+            appleSprite = appleSprites[(int)spawnWord.letterIndexes[arrayIdx]];
         }
             
 

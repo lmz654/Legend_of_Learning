@@ -6,6 +6,9 @@ public class knife : MonoBehaviour {
     [SerializeField]
     private float speed;
     bool facingRight;
+    private string name;
+    public GameObject wordSpawn;
+    public SpawnWord spawnWord;
 
     private Rigidbody2D myRigidbody;
 
@@ -13,7 +16,8 @@ public class knife : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+        wordSpawn = GameObject.FindGameObjectWithTag("WordSpawn");
+        spawnWord = wordSpawn.GetComponent<SpawnWord>();
         myRigidbody = GetComponent<Rigidbody2D>();
 	}
 
@@ -31,6 +35,8 @@ public class knife : MonoBehaviour {
         Debug.Log(gameObject.name + " collision with " + col.gameObject.name);
         if (col.gameObject.name != "Ninja Girl" && col.gameObject.name != "knife(Clone)")
         {
+            name = col.gameObject.name;
+            spawnWord.CorrectLetter(name);
             Destroy(gameObject);
             Destroy(col.gameObject);
         }

@@ -6,7 +6,6 @@ analyze
 ancestor
 annual
 apparent
-appropriate
 arena
 arrest
 ascend
@@ -30,23 +29,16 @@ chamber
 circular
 coax
 column
-communicate
-competition
 complete
-concentrate
 concern
 conclude
 confuse
-congratulate
-considerable
 content
 contribute
 crafty
 create
-demonstrate
 descend
 desire
-destructive
 develop
 disaster
 disclose
@@ -60,7 +52,6 @@ entire
 entrance
 envy
 essential
-extraordinary
 flexible
 focus
 fragile
@@ -84,7 +75,6 @@ jagged
 lack
 limb
 limp
-manufacture
 master
 mature
 meadow
@@ -93,7 +83,6 @@ mock
 modest
 noble
 orchard
-outstanding
 peculiar
 peer
 permit
