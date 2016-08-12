@@ -109,12 +109,13 @@ public class GameController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         time += Time.deltaTime;
-        Debug.Log(time);
-        if (time > 7.0f)
+
+        if (time > 7.2f)
         {
-            time -= 7.0f;
-            correctAnswer();
+           time -= 7.2f;
+           correctAnswer();
         }
+
     }
 
 }
