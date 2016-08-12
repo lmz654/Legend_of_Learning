@@ -14,7 +14,9 @@ public class HealthManager : MonoBehaviour {
     Animator anim;
     PlayerManager playerManager;
     GameObject apples;
+    GameObject words;
     SpawnApple spawnApple;
+    SpawnWord spawnWord;
     
 	// Use this for initialization
 	void Start () {
@@ -25,7 +27,9 @@ public class HealthManager : MonoBehaviour {
         anim = GetComponent<Animator>();
         playerManager = GetComponent<PlayerManager>();
         apples = GameObject.FindGameObjectWithTag("AppleSpawns");
+        words = GameObject.FindGameObjectWithTag("WordSpawn");
         spawnApple = apples.GetComponent<SpawnApple>();
+        spawnWord = words.GetComponent<SpawnWord>();
 	}
 	
 	// Update is called once per frame
@@ -47,6 +51,11 @@ public class HealthManager : MonoBehaviour {
         playerManager.enabled = false;
         spawnApple.CancelInvoke("MakeRandomApple");
         gameOver.enabled = true;
+        foreach (GameObject g in spawnWord.missingList) {
+            g.SetActive(false);
+            Debug.Log("reaveal letters");
+        }
+            
 
     }
 

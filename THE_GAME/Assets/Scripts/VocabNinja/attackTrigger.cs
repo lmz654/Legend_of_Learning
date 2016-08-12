@@ -8,6 +8,7 @@ public class attackTrigger : MonoBehaviour {
     public GameObject wordSpawn;
     public SpawnWord spawnWord;
     public AudioSource[] sliceSound;
+    public int magnitude;
 
     void Start() {
         wordSpawn = GameObject.FindGameObjectWithTag("WordSpawn");
@@ -29,6 +30,13 @@ public class attackTrigger : MonoBehaviour {
             spawnWord.CorrectLetter(name);
 
             col.SendMessageUpwards("Slice", dmg);
+
+            //make apple fly up
+            
+            var force = transform.position - col.transform.position;
+            force = -force;
+            force.Normalize();
+            col.GetComponent<Rigidbody2D>().AddForce(force * magnitude);
         }
     }
 

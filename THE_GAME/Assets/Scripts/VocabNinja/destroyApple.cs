@@ -24,7 +24,7 @@ public class destroyApple : MonoBehaviour
     {
         Debug.Log("collision name" + col.gameObject.name);
 
-        if (col.gameObject.name == "Ground")
+        if (col.gameObject.tag == "Ground")
         {
             //anim.SetInteger("state",1);
             Destroy(gameObject);

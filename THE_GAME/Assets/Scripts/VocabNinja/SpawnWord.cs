@@ -9,7 +9,10 @@ public class SpawnWord : MonoBehaviour {
     public Sprite[] letterSprites;
     public GameObject[] missingList;
     public Transform[] WordSpawnPoints;
-    public string[] words = new string[]{"bad", "bed", "dead"};
+    //public string[] words = new string[]{"bad", "bed", "dead"};
+    public string[] words;
+    public string tempWords;
+    public TextAsset wordsList;
     public char[] key = new char[]{'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
     public Sprite missing_letter;
     public char[] chars;
@@ -27,14 +30,19 @@ public class SpawnWord : MonoBehaviour {
     GameObject player;
     HealthManager healthManager;
     public AudioSource clearSound;
+    ArrayList tempIndex;
 
 
 
     // Use this for initialization
     void Start () {
+        tempWords = wordsList.text;
+        words = tempWords.Split('\n');
+
+        Debug.Log("words " + words.ToString());
         player = GameObject.FindGameObjectWithTag("Player");
         healthManager = player.GetComponent<HealthManager>();
-
+        
         foreach (GameObject g in missingList)
         {
             Debug.Log("Start");
@@ -50,6 +58,7 @@ public class SpawnWord : MonoBehaviour {
 	
     public void MakeWord()
     {
+        tempIndex = new ArrayList();
         covered = new ArrayList();
         hey = new ArrayList();
         string letterName;
@@ -86,37 +95,51 @@ public class SpawnWord : MonoBehaviour {
         else if (charLength == 4 || charLength == 5)
         {
             MissingLetter();
-            tempIndx = randomCharIndx;
+            tempIndex.Add(randomCharIndx);
             MissingLetter();
         }
         else if (charLength == 6 || charLength == 7)
         {
             MissingLetter();
-            tempIndx = randomCharIndx;
+            tempIndex.Add(randomCharIndx);
             MissingLetter();
-            tempIndx2 = randomCharIndx;
+            tempIndex.Add(randomCharIndx);
             MissingLetter();
         }
         else if (charLength == 8)
         {
             MissingLetter();
-            tempIndx = randomCharIndx;
+            tempIndex.Add(randomCharIndx);
             MissingLetter();
-            tempIndx2 = randomCharIndx;
+            tempIndex.Add(randomCharIndx);
             MissingLetter();
-            tempIndx3 = randomCharIndx;
+            tempIndex.Add(randomCharIndx);
             MissingLetter();
         }
         else if (charLength == 9 || charLength == 10)
         {
             MissingLetter();
-            tempIndx = randomCharIndx;
+            tempIndex.Add(randomCharIndx);
             MissingLetter();
-            tempIndx2 = randomCharIndx;
+            tempIndex.Add(randomCharIndx);
             MissingLetter();
-            tempIndx3 = randomCharIndx;
+            tempIndex.Add(randomCharIndx);
             MissingLetter();
-            tempIndx4 = randomCharIndx;
+            tempIndex.Add(randomCharIndx);
+            MissingLetter();
+        }
+        else if (charLength >= 11 || charLength <= 13)
+        {
+            MissingLetter();
+            tempIndex.Add(randomCharIndx);
+            MissingLetter();
+            tempIndex.Add(randomCharIndx);
+            MissingLetter();
+            tempIndex.Add(randomCharIndx);
+            MissingLetter();
+            tempIndex.Add(randomCharIndx);
+            MissingLetter();
+            tempIndex.Add(randomCharIndx);
             MissingLetter();
         }
 
@@ -128,7 +151,7 @@ public class SpawnWord : MonoBehaviour {
         randomCharIndx = Random.Range(0, charLength);
 
         //while loop to prevent the missing letter from appearing in the same spot
-        while (tempIndx == randomCharIndx || tempIndx2 == randomCharIndx || tempIndx3 == randomCharIndx || tempIndx4 == randomCharIndx)
+        while (tempIndex.Contains(randomCharIndx))
         {
             randomCharIndx = Random.Range(0, charLength);
         }
@@ -182,6 +205,7 @@ public class SpawnWord : MonoBehaviour {
             {
                 Destroy(g);
             }
+           
             MakeWord();
         }
     }

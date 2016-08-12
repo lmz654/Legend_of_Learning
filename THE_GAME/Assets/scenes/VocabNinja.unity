@@ -498,6 +498,7 @@ MonoBehaviour:
   - {fileID: 2120344370}
   - {fileID: 926588304}
   - {fileID: 1190735669}
+  magnitude: 1200
 --- !u!1 &173775125
 GameObject:
   m_ObjectHideFlags: 0
@@ -1812,38 +1813,40 @@ MonoBehaviour:
   spawnTime: 1
   applePrefab: {fileID: 165532, guid: c818f11ba793133478e1f924713e2a97, type: 2}
   appleSprites:
-  - {fileID: 21300000, guid: 7299b920ee540284ea76073062207a55, type: 3}
-  - {fileID: 21300000, guid: 6b0e668017de35f4bbbe1a0441080318, type: 3}
-  - {fileID: 21300000, guid: b7233771c16f13143b8262e78789c080, type: 3}
-  - {fileID: 21300000, guid: b1220aa27103867478a44dcb20908d5f, type: 3}
-  - {fileID: 21300000, guid: a4e6a5341631ba44e8a7c2c2b7572493, type: 3}
-  - {fileID: 21300000, guid: b02eeb46adbb1714399c21b1f75352ff, type: 3}
-  - {fileID: 21300000, guid: 90d0ed664dfb74e46a84f4e2b8d23bb6, type: 3}
-  - {fileID: 21300000, guid: 49ff6ab674ddcb248a3ccb64201f340f, type: 3}
-  - {fileID: 21300000, guid: 3c36723732a8ff948bdc9e636fd695b0, type: 3}
+  - {fileID: 21300000, guid: 2fe460dfcb01ed140a7f4bce14319a81, type: 3}
   - {fileID: 21300000, guid: 30e0b6e71f51fa84a97fdfe82a761ae8, type: 3}
-  - {fileID: 21300000, guid: 953905f72b52b404c8eafd004ccc9172, type: 3}
+  - {fileID: 21300000, guid: aadf608e261e9fe4899b43777ace645e, type: 3}
+  - {fileID: 21300000, guid: 5aba6b4dbf338d044bc44660a8971955, type: 3}
+  - {fileID: 21300000, guid: 21fbbf1b308710f4d850c218788e7dfc, type: 3}
+  - {fileID: 21300000, guid: 49ff6ab674ddcb248a3ccb64201f340f, type: 3}
+  - {fileID: 21300000, guid: b1220aa27103867478a44dcb20908d5f, type: 3}
+  - {fileID: 21300000, guid: 2e30c6ae39694824dae958663970141a, type: 3}
+  - {fileID: 21300000, guid: c96fc72e4e3172f4995e82c895e4d623, type: 3}
+  - {fileID: 21300000, guid: 6b0e668017de35f4bbbe1a0441080318, type: 3}
+  - {fileID: 21300000, guid: c6a9b3db782ee5a4c89cc4151acf9548, type: 3}
+  - {fileID: 21300000, guid: 81ccc1eeb2203954cbd6a78ae780a8bc, type: 3}
+  - {fileID: 21300000, guid: a4e6a5341631ba44e8a7c2c2b7572493, type: 3}
+  - {fileID: 21300000, guid: 7299b920ee540284ea76073062207a55, type: 3}
+  - {fileID: 21300000, guid: e10ab80cc5ae074409825a10aee46e4b, type: 3}
+  - {fileID: 21300000, guid: 2c5688cd080f56c45a5eb286f428775d, type: 3}
+  - {fileID: 21300000, guid: b7233771c16f13143b8262e78789c080, type: 3}
   - {fileID: 21300000, guid: 700f2a09fae10fa408bde97b8320a9bf, type: 3}
   - {fileID: 21300000, guid: 8964ec3ae063a4a44b256068bf73dc35, type: 3}
-  - {fileID: 21300000, guid: 9739de0bcd40b3743b2bcb1cc927b38c, type: 3}
-  - {fileID: 21300000, guid: 21fbbf1b308710f4d850c218788e7dfc, type: 3}
-  - {fileID: 21300000, guid: c6a9b3db782ee5a4c89cc4151acf9548, type: 3}
-  - {fileID: 21300000, guid: e10ab80cc5ae074409825a10aee46e4b, type: 3}
-  - {fileID: 21300000, guid: 5aba6b4dbf338d044bc44660a8971955, type: 3}
   - {fileID: 21300000, guid: a544795d7ad093f489ac7e75d0943970, type: 3}
-  - {fileID: 21300000, guid: 2c5688cd080f56c45a5eb286f428775d, type: 3}
-  - {fileID: 21300000, guid: c96fc72e4e3172f4995e82c895e4d623, type: 3}
-  - {fileID: 21300000, guid: aadf608e261e9fe4899b43777ace645e, type: 3}
-  - {fileID: 21300000, guid: 2e30c6ae39694824dae958663970141a, type: 3}
   - {fileID: 21300000, guid: 2bcd16be8725d5849be22858e36bf55a, type: 3}
-  - {fileID: 21300000, guid: 81ccc1eeb2203954cbd6a78ae780a8bc, type: 3}
-  - {fileID: 21300000, guid: 2fe460dfcb01ed140a7f4bce14319a81, type: 3}
+  - {fileID: 21300000, guid: 9739de0bcd40b3743b2bcb1cc927b38c, type: 3}
+  - {fileID: 21300000, guid: 3c36723732a8ff948bdc9e636fd695b0, type: 3}
+  - {fileID: 21300000, guid: 90d0ed664dfb74e46a84f4e2b8d23bb6, type: 3}
+  - {fileID: 21300000, guid: 953905f72b52b404c8eafd004ccc9172, type: 3}
+  - {fileID: 21300000, guid: b02eeb46adbb1714399c21b1f75352ff, type: 3}
   SpawnPoints:
   - {fileID: 212401176}
   - {fileID: 1368329538}
   - {fileID: 1029650028}
   - {fileID: 443158898}
   - {fileID: 465934251}
+  words: {fileID: 0}
+  spawnWord: {fileID: 0}
 --- !u!4 &1024869603
 Transform:
   m_ObjectHideFlags: 0
@@ -2612,6 +2615,8 @@ MonoBehaviour:
   - chemistry
   - saturn
   - universe
+  tempWords: 
+  wordsList: {fileID: 4900000, guid: 1fdad612f71ee1d488725000f7f690a1, type: 3}
   key: 6100620063006400650066006700680069006a006b006c006d006e006f0070007100720073007400750076007700780079007a00
   missing_letter: {fileID: 21300000, guid: 22f93830a8b16c94cba7897455a89870, type: 3}
   chars: 
@@ -3120,7 +3125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedX: 25
-  jumpPower: 700
+  jumpPower: 950
   attackTrigger: {fileID: 106057315}
   RknifePrefab: {fileID: 184868, guid: 9d35c09bf88b24044a4a0c6fa1de3829, type: 2}
   LknifePrefab: {fileID: 129118, guid: 54e265768e701dd4f8225aa77d7e7a8b, type: 2}
