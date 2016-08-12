@@ -620,9 +620,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hazardCount: 3
-  spawnWait: 0.2
+  spawnWait: 0.1
   startWait: 1
-  waveWait: 3
+  waveWait: 5
   ans: {fileID: 151926, guid: 00da5fd798479c44e8871795cd34c0a3, type: 2}
   spawns:
   - {fileID: 392667959}

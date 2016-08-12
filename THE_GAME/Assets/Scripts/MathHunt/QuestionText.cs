@@ -23,12 +23,7 @@ public class QuestionText : MonoBehaviour {
 	}
 
 
-    public void correctAnswer()
-    {
-        updateQuestion();
-    }
-
-    void updateQuestion()
+    public void updateQuestion()
     {
         int rand1 = Random.Range(0, 10);
         int rand2 = Random.Range(0, 10);

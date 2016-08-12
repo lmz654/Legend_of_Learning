@@ -21,7 +21,6 @@ public class Shoot : MonoBehaviour {
         
 
 		if (Input.GetMouseButtonDown (0) && Time.time > reloadTimer) {
-            Debug.Log("Clicked");
             Vector2 pos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             RaycastHit2D hitInfo = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(pos), Vector2.zero);
             // RaycastHit2D can be either true or null, but has an implicit conversion to bool, so we can use it like this
@@ -35,10 +34,12 @@ public class Shoot : MonoBehaviour {
 
                 if (hitInfo.transform.gameObject.tag == "bird1")
                 {
-                    //if (answer == hitInfo.transform.gameObject.tag ) {
+                    if (hitInfo.transform.gameObject.name == answer.ToString() ) {
                         scoring.SendMessageUpwards("addScore", 10);
-                    //}
-                    
+                        questions.SendMessageUpwards("updateQuestion");
+                        gameObject.GetComponent<AudioSource>().Play();
+                    }
+
                     //points.addScore (10);
                 }
                 if (hitInfo.transform.gameObject.tag == "bird2")
@@ -56,7 +57,6 @@ public class Shoot : MonoBehaviour {
                     scoring.SendMessageUpwards("addScore", 40);
                     //points.addScore (40);
                 }
-                gameObject.GetComponent<AudioSource>().Play();
                 Destroy(hitInfo.transform.gameObject);
 
                 // Here you can check hitInfo to see which collider has been hit, and act appropriately.
