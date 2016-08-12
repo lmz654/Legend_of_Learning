@@ -97,7 +97,7 @@ GameObject:
   - 114: {fileID: 157830650}
   - 114: {fileID: 157830652}
   m_Layer: 5
-  m_Name: Game3
+  m_Name: History
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,7 +153,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Game 3
+  m_Text: Question Quest
 --- !u!222 &157830651
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -200,7 +200,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1231988831}
-        m_MethodName: chemPressed
+        m_MethodName: histPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -757,7 +757,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   histGame: {fileID: 1443650805}
   mathGame: {fileID: 1991372143}
-  vocabNinja: {fileID: 157830652}
+  vocabNinja: {fileID: 1443650805}
   logout: {fileID: 425624181}
 --- !u!1 &1443650801
 GameObject:
@@ -898,7 +898,7 @@ GameObject:
   - 114: {fileID: 1991372141}
   - 114: {fileID: 1991372143}
   m_Layer: 5
-  m_Name: Game2
+  m_Name: Math
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -954,7 +954,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Game 2
+  m_Text: Math Hunt
 --- !u!222 &1991372142
 CanvasRenderer:
   m_ObjectHideFlags: 0
