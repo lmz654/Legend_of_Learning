@@ -26,9 +26,10 @@ public class SpawnWord : MonoBehaviour {
     public ArrayList hey;
     GameObject player;
     HealthManager healthManager;
-    
+    public AudioSource clearSound;
 
-    
+
+
     // Use this for initialization
     void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -157,6 +158,7 @@ public class SpawnWord : MonoBehaviour {
                 num = k;
                 if (covered.Contains(k))
                 {
+                    ScoreManager.score += 10;
                     Debug.Log("Inside CorrectLetter " + letter);
                     missingList[k].SetActive(false);
                     covered.Remove(k);
@@ -174,7 +176,8 @@ public class SpawnWord : MonoBehaviour {
     {
         if (covered.Count == 0)
         {
-            ScoreManager.score += 10;
+            clearSound.Play();
+            ScoreManager.score += 100;
             foreach (GameObject g in hey)
             {
                 Destroy(g);

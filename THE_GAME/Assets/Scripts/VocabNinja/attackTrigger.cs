@@ -7,6 +7,7 @@ public class attackTrigger : MonoBehaviour {
     public string name;
     public GameObject wordSpawn;
     public SpawnWord spawnWord;
+    public AudioSource[] sliceSound;
 
     void Start() {
         wordSpawn = GameObject.FindGameObjectWithTag("WordSpawn");
@@ -18,6 +19,9 @@ public class attackTrigger : MonoBehaviour {
         
         if (col.isTrigger != true && col.CompareTag("Apple"))
         {
+            int soundIdx = Random.Range(0, sliceSound.Length);
+            AudioSource selected_sound = sliceSound[soundIdx];
+            selected_sound.Play();
             dmg = true;
             name = col.gameObject.name;
             Debug.Log("The name is " + name);

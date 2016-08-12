@@ -36,7 +36,8 @@ public class destroyApple : MonoBehaviour
     {
         if (slice == true)
         {
-            Destroy(gameObject);
+            GetComponent<Animator>().enabled = true;
+            //Destroy(gameObject);
         }
     }
 
