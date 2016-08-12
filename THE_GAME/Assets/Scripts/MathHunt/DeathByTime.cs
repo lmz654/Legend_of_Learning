@@ -4,10 +4,12 @@ using System.Collections;
 public class DeathByTime : MonoBehaviour {
 
     private int answer;
+    private float time;
+    private GameObject control;
 
 	[SerializeField]
 	private float speed = 10;
-	public float timeDeath;
+    public float timeDeath;
 	private Vector2 direction;
 
 	private Rigidbody2D myRigidbody;
@@ -15,7 +17,7 @@ public class DeathByTime : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		myRigidbody = GetComponent<Rigidbody2D> ();
-		Destroy (gameObject, timeDeath);
+        Destroy (gameObject, timeDeath);
 	}
 
 	void FixedUpdate(){
@@ -25,5 +27,10 @@ public class DeathByTime : MonoBehaviour {
 	public void Initialize(Vector2 direction){
 		this.direction = direction;
 	}
+
+    void Update()
+    {
+
+    }
 
 }

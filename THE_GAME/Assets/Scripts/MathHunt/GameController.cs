@@ -4,35 +4,27 @@ using System.Collections.Generic;
 
 public class GameController : MonoBehaviour {
 
-	public int hazardCount;
-	public float spawnWait;
-	public float startWait;
-	public float waveWait;
+    public int hazardCount;
     public GameObject ans;
     private int answer;
     private int[] multipleChoice;
+    private float time;
+    List<GameObject> tempBirds = new List<GameObject>();
 
     public Transform[] spawns;
     [SerializeField]
 	public GameObject[] bird;
-	public float speed = 1.0f;
 	public int level = 1;
 	int rand;
-	int count;
-	public float speedx;
 
 
 	// Use this for initialization
 	void Start () {
-        StartCoroutine(SpawnWaves());
-        
+        SpawnWaves();
 	}
 
-    IEnumerator SpawnWaves()
+    public void SpawnWaves()
     {
-        yield return new WaitForSeconds(startWait);
-        while (true)
-        {
             List<Transform> freeSpawnPoints = new List<Transform>(spawns);
             List<int> multiple = new List<int>();
 
@@ -68,6 +60,7 @@ public class GameController : MonoBehaviour {
                     if (pos.position.x < 0)
                     {
                         GameObject obj = Instantiate(bird[rand], pos.position, pos.rotation) as GameObject;
+                        tempBirds.Add(obj);
                         obj.GetComponent<DeathByTime>().Initialize(Vector2.right);
                         obj.gameObject.name = possibleAnswer.ToString();
 
@@ -83,6 +76,7 @@ public class GameController : MonoBehaviour {
                         var offset = pos.rotation;
                         offset.y = 180;
                         GameObject obj2 = Instantiate(bird[rand], pos.position, offset) as GameObject;
+                        tempBirds.Add(obj2);
                         obj2.GetComponent<DeathByTime>().Initialize(Vector2.left);
                         obj2.gameObject.name = possibleAnswer.ToString();
 
@@ -94,10 +88,7 @@ public class GameController : MonoBehaviour {
                         layerText2.sortingOrder = 1;
                     }
                 }
-                yield return new WaitForSeconds(spawnWait);
             }
-            yield return new WaitForSeconds(waveWait);
-        }
     }
 
     public void answerGet(int x)
@@ -105,9 +96,25 @@ public class GameController : MonoBehaviour {
         this.answer = x;
     }
 
+    public void correctAnswer()
+    {
+        foreach(GameObject bird in tempBirds)
+        {
+            Destroy(bird);
+        }
+        tempBirds = new List<GameObject>();
+        SpawnWaves();
+    }
+
 	// Update is called once per frame
 	void Update () {
-
-	}
+        time += Time.deltaTime;
+        Debug.Log(time);
+        if (time > 7.0f)
+        {
+            time -= 7.0f;
+            correctAnswer();
+        }
+    }
 
 }

@@ -30,6 +30,7 @@ public class Shoot : MonoBehaviour {
 
                 GameObject scoring = GameObject.Find("Score");
                 GameObject questions = GameObject.Find("Questions");
+                GameObject controller = GameObject.Find("GameController");
                 
 
                 if (hitInfo.transform.gameObject.tag == "bird1")
@@ -37,25 +38,57 @@ public class Shoot : MonoBehaviour {
                     if (hitInfo.transform.gameObject.name == answer.ToString() ) {
                         scoring.SendMessageUpwards("addScore", 10);
                         questions.SendMessageUpwards("updateQuestion");
+                        controller.SendMessageUpwards("correctAnswer");
                         gameObject.GetComponent<AudioSource>().Play();
                     }
+                    else
+                    {
+                        controller.SendMessageUpwards("correctAnswer");
+                    }
 
-                    //points.addScore (10);
                 }
                 if (hitInfo.transform.gameObject.tag == "bird2")
                 {
-                    scoring.SendMessageUpwards("addScore", 20);
-                    //points.addScore (20);
+                    if (hitInfo.transform.gameObject.name == answer.ToString())
+                    {
+                        scoring.SendMessageUpwards("addScore", 10);
+                        questions.SendMessageUpwards("updateQuestion");
+                        controller.SendMessageUpwards("correctAnswer");
+                        gameObject.GetComponent<AudioSource>().Play();
+                    }
+                    else
+                    {
+                        controller.SendMessageUpwards("correctAnswer");
+                    }
+
                 }
                 if (hitInfo.transform.gameObject.tag == "bird3")
                 {
-                    scoring.SendMessageUpwards("addScore", 30);
-                    //points.addScore (30);
+                    if (hitInfo.transform.gameObject.name == answer.ToString())
+                    {
+                        scoring.SendMessageUpwards("addScore", 10);
+                        questions.SendMessageUpwards("updateQuestion");
+                        controller.SendMessageUpwards("correctAnswer");
+                        gameObject.GetComponent<AudioSource>().Play();
+                    }
+                    else
+                    {
+                        controller.SendMessageUpwards("correctAnswer");
+                    }
                 }
                 if (hitInfo.transform.gameObject.tag == "bird4")
                 {
-                    scoring.SendMessageUpwards("addScore", 40);
-                    //points.addScore (40);
+                    if (hitInfo.transform.gameObject.name == answer.ToString())
+                    {
+                        scoring.SendMessageUpwards("addScore", 10);
+                        questions.SendMessageUpwards("updateQuestion");
+                        controller.SendMessageUpwards("correctAnswer");
+                        gameObject.GetComponent<AudioSource>().Play();
+                    }
+                    else
+                    {
+                        controller.SendMessageUpwards("correctAnswer");
+                    }
                 }
                 Destroy(hitInfo.transform.gameObject);
 
