@@ -12,7 +12,7 @@ GameObject:
   - 212: {fileID: 21270444}
   - 50: {fileID: 5017408}
   - 114: {fileID: 11420854}
-  - 95: {fileID: 9593528}
+  - 95: {fileID: 9540966}
   m_Layer: 0
   m_Name: apple
   m_TagString: Apple
@@ -64,7 +64,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
---- !u!95 &9593528
+--- !u!95 &9540966
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -73,9 +73,9 @@ Animator:
   m_GameObject: {fileID: 165532}
   m_Enabled: 0
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6498d93f049e57f47ae193da08833cb2, type: 2}
+  m_Controller: {fileID: 9100000, guid: 024957743b45cec43a2c3dad833ef627, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 1
+  m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d6218432a3a7c7418d189b1b624f7c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreValue: 10
 --- !u!212 &21270444
 SpriteRenderer:
   m_ObjectHideFlags: 1

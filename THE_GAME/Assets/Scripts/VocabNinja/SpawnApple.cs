@@ -7,9 +7,13 @@ public class SpawnApple : MonoBehaviour {
     public GameObject applePrefab;
     public Sprite[] appleSprites;
     public Transform[] SpawnPoints;
+    public GameObject words;
+    public SpawnWord spawnWord;
 
     void Start()
     {
+        words = GameObject.FindGameObjectWithTag("WordSpawn");
+        spawnWord = words.GetComponent<SpawnWord>();
         InvokeRepeating("MakeRandomApple", spawnTime, spawnTime);
     }
 
@@ -17,7 +21,19 @@ public class SpawnApple : MonoBehaviour {
     {
 
         int arrayIdx = Random.Range(0, appleSprites.Length);
-        Sprite appleSprite = appleSprites[arrayIdx];
+        int weightedRand = Random.Range(1, 100);
+        Sprite appleSprite;
+        if (weightedRand <= 0)
+            appleSprite = appleSprites[arrayIdx];
+        else
+        {
+            
+            arrayIdx = Random.Range(0, spawnWord.missingList.Length);
+            Debug.Log("correct letters!!!!!!!!!!!!!" + spawnWord.missingList.Length + " " + arrayIdx);
+            appleSprite = appleSprites[arrayIdx];
+        }
+            
+
         string appleName = appleSprite.name;
 
         int spawnIndex = Random.Range(0, SpawnPoints.Length);

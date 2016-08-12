@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -18,14 +19,14 @@ public class PlayerManager : MonoBehaviour
 
     bool facingRight, Jumping, canJump;
     float speed;
-
+    HealthManager healthManager;
     Animator anim;
     Rigidbody2D rb;
 
     // Use this for initialization
     void Start()
     {
-
+        healthManager = GetComponent<HealthManager>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         facingRight = true;
@@ -44,53 +45,58 @@ public class PlayerManager : MonoBehaviour
         /*
          * Putting the exit function here
          */
-
+       
         if (Input.GetButton("Cancel"))
         {
             SceneManager.LoadScene(2);
         }
 
+        else if (healthManager.isDead)
+        {
+            speed = 0;
+        }
+
         // left player movement
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             speed = -speedX;
         }
-        if (Input.GetKeyUp(KeyCode.LeftArrow))
+        else if (Input.GetKeyUp(KeyCode.LeftArrow))
         {
             speed = 0;
         }
 
 
         // right player movement
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             speed = speedX;
         }
-        if (Input.GetKeyUp(KeyCode.RightArrow))
+        else if (Input.GetKeyUp(KeyCode.RightArrow))
         {
             speed = 0;
         }
 
         // Sword attack action
-        if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKeyDown(KeyCode.D))
         {
             anim.SetInteger("State", 2);
             attackTrigger.enabled = true;
             swordSound.Play();
         }
-        if (Input.GetKeyUp(KeyCode.D))
+        else if (Input.GetKeyUp(KeyCode.D))
         {
             anim.SetInteger("State", 0);
             attackTrigger.enabled = false;
         }
 
         //Throw action
-        if (Input.GetKeyDown(KeyCode.W))
+        else if (Input.GetKeyDown(KeyCode.W))
         {
             anim.SetInteger("State", 3);
             ThrowKnife(0);
         }
-        if (Input.GetKeyUp(KeyCode.W))
+        else if (Input.GetKeyUp(KeyCode.W))
         {
             anim.SetInteger("State", 0);
         }
@@ -98,7 +104,7 @@ public class PlayerManager : MonoBehaviour
 
         //Jumping
 
-        if (Input.GetKeyDown(KeyCode.Q) && canJump)
+        else if (Input.GetKeyDown(KeyCode.Q) && canJump)
         {
             canJump = false;
             anim.SetInteger("State", 4);
@@ -155,9 +161,14 @@ public class PlayerManager : MonoBehaviour
         if (col.gameObject.name == "Ground")
         {
             canJump = true;
-
-
-
         }
+
+        if (col.gameObject.tag == "Ground")
+        { }
+    }
+
+    public void stopMoving() {
+        speed = 0;
+        this.enabled = false;
     }
 }

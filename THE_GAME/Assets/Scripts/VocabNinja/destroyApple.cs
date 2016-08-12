@@ -24,7 +24,7 @@ public class destroyApple : MonoBehaviour
     {
         Debug.Log("collision name" + col.gameObject.name);
 
-        if (col.gameObject.name == "Ground")
+        if (col.gameObject.tag == "Ground")
         {
             //anim.SetInteger("state",1);
             Destroy(gameObject);
@@ -36,10 +36,8 @@ public class destroyApple : MonoBehaviour
     {
         if (slice == true)
         {
-            //Debug.Log("in Slice");
-            //anim.SetInteger("State", 2);
-            ScoreManager.score += scoreValue;
-            Destroy(gameObject);
+            GetComponent<Animator>().enabled = true;
+            //Destroy(gameObject);
         }
     }
 

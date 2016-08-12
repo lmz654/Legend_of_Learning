@@ -21,6 +21,9 @@ TagManager:
   - bird4
   - bird2
   - bird1
+  - WordSpawn
+  - Ground
+  - AppleSpawns
   layers:
   - Default
   - TransparentFX
