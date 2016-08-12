@@ -5,6 +5,13 @@ public class attackTrigger : MonoBehaviour {
 
     public bool dmg;
     public string name;
+    public GameObject wordSpawn;
+    public SpawnWord spawnWord;
+
+    void Start() {
+        wordSpawn = GameObject.FindGameObjectWithTag("WordSpawn");
+        spawnWord = wordSpawn.GetComponent<SpawnWord>();
+    }
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -14,10 +21,8 @@ public class attackTrigger : MonoBehaviour {
             dmg = true;
             name = col.gameObject.name;
             Debug.Log("The name is " + name);
-   
 
-            SpawnWord.SlicedLetter(name);
-
+            spawnWord.CorrectLetter(name);
 
             col.SendMessageUpwards("Slice", dmg);
         }

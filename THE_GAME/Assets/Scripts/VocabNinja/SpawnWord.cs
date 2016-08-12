@@ -24,12 +24,17 @@ public class SpawnWord : MonoBehaviour {
     public ArrayList covered;
     public static string sliced;
     public ArrayList hey;
+    GameObject player;
+    HealthManager healthManager;
+    
 
-
+    
     // Use this for initialization
     void Start () {
+        player = GameObject.FindGameObjectWithTag("Player");
+        healthManager = player.GetComponent<HealthManager>();
 
-        foreach(GameObject g in missingList)
+        foreach (GameObject g in missingList)
         {
             Debug.Log("Start");
             g.SetActive(false);
@@ -134,42 +139,42 @@ public class SpawnWord : MonoBehaviour {
     }
 
 
-    public static void SlicedLetter(string x)
-    {
-        Debug.Log("sliced letter " + x);
-        sliced = x;
-    }
 
-
-    public void CorrectLetter()
+    public void CorrectLetter(string letter)
     {
+        bool inWord = false;
         int num;
-        string correct = sliced;
-        
+        Debug.Log("Correct LEtter: " + letter);
+        //string correct = sliced;
+
+
 
         for (int k = 0; k < charLength; k++)
         {
-            if (correct == chars[k].ToString().ToUpper())
+            if (letter == chars[k].ToString().ToUpper())
             {
+                inWord = true;
                 num = k;
                 if (covered.Contains(k))
                 {
-                    Debug.Log("Inside CorrectLetter " + correct);
+                    Debug.Log("Inside CorrectLetter " + letter);
                     missingList[k].SetActive(false);
                     covered.Remove(k);
                 }
 
-
             }
+
         }
+        if (!inWord)
+            healthManager.takeDamage();
     }
 
 
     void Update()
     {
-        CorrectLetter();
         if (covered.Count == 0)
         {
+            ScoreManager.score += 10;
             foreach (GameObject g in hey)
             {
                 Destroy(g);
