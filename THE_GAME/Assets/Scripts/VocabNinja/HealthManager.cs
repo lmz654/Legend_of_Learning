@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class HealthManager : MonoBehaviour {
 
     public Slider health;
-    public Text gameOver;
+    //public Text gameOver;
     public Text cont;
     
     public int startingHealth = 100;
@@ -20,13 +20,15 @@ public class HealthManager : MonoBehaviour {
     GameObject words;
     SpawnApple spawnApple;
     SpawnWord spawnWord;
+
+    public Canvas gameOver;
     
 	// Use this for initialization
 	void Start () {
         isDead = false;
         
         currentHealth = startingHealth;
-        gameOver = gameOver.GetComponent<Text>();
+        gameOver = gameOver.GetComponent<Canvas>();
         gameOver.enabled = false;
         cont.enabled = false;
         
