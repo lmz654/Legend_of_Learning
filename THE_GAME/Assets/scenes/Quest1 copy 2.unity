@@ -1253,11 +1253,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questions:
-  - fact: George Washington was the first president of the United States.
-    isTrue: 1
-  - fact: Mark Robinson created Marshmellows.
+  - fact: The Civil War was fought from 1860 to 1865.
     isTrue: 0
-  - fact: The Battle of the Alamo was a part of the Texas Revolution.
+  - fact: The Louisiana Purchase was a land deal between the United States and France.
+    isTrue: 1
+  - fact: The term for a person who wanted to end slavery is an abolitionist.
     isTrue: 1
   factText: {fileID: 1237585664}
   trueAnswerText: {fileID: 581729365}

@@ -1253,12 +1253,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questions:
-  - fact: George Washington was the first president of the United States.
+  - fact: Neil Armstrong walked on the moon in 1969.
     isTrue: 1
-  - fact: Mark Robinson created Marshmellows.
+  - fact: The Seneca Falls Convention was the first woman's rights convention.
+    isTrue: 1
+  - fact: The 3rd Amendment is the right to bear arms.
     isTrue: 0
-  - fact: The Battle of the Alamo was a part of the Texas Revolution.
-    isTrue: 1
   factText: {fileID: 1237585664}
   trueAnswerText: {fileID: 581729365}
   falseAnswerText: {fileID: 896441994}

@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour {
 
 	public Question[] questions;
 	private static List<Question> unansweredQuestions;
-
+	int counter = 0;
 	private Question currentQuestion;
 
 	[SerializeField]
@@ -20,6 +20,12 @@ public class GameManager : MonoBehaviour {
 
 	[SerializeField]
 	private Text falseAnswerText;
+
+	//[SerializeField]
+	//private int counter;
+
+	[SerializeField]
+	private Text count;
 
 	[SerializeField]
 	private Animator animator;
@@ -35,6 +41,7 @@ public class GameManager : MonoBehaviour {
 		}
 
 		setCurrentQuestion();
+		//counter = 0;
 
 	}
 
@@ -48,11 +55,13 @@ public class GameManager : MonoBehaviour {
 		if (currentQuestion.isTrue) {
 			trueAnswerText.text = "Correct";
 			falseAnswerText.text = "Wrong";
+
+			++counter;
 		} else {
 			trueAnswerText.text = "Wrong";
 			falseAnswerText.text = "Correct";
 		}
-
+		count.text = "Points: " + counter;
 	}
 
 	IEnumerator TransitionToNextQuestion()
