@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthManager : MonoBehaviour {
 
     public Slider health;
-    public Text gameOver;
+    //public Text gameOver;
+    public Text cont;
+    
     public int startingHealth = 100;
     public int currentHealth;
     public int damage = 10;
@@ -17,13 +20,18 @@ public class HealthManager : MonoBehaviour {
     GameObject words;
     SpawnApple spawnApple;
     SpawnWord spawnWord;
+
+    public Canvas gameOver;
     
 	// Use this for initialization
 	void Start () {
         isDead = false;
+        
         currentHealth = startingHealth;
-        gameOver = gameOver.GetComponent<Text>();
+        gameOver = gameOver.GetComponent<Canvas>();
         gameOver.enabled = false;
+        cont.enabled = false;
+        
         anim = GetComponent<Animator>();
         playerManager = GetComponent<PlayerManager>();
         apples = GameObject.FindGameObjectWithTag("AppleSpawns");
@@ -51,6 +59,9 @@ public class HealthManager : MonoBehaviour {
         playerManager.enabled = false;
         spawnApple.CancelInvoke("MakeRandomApple");
         gameOver.enabled = true;
+        cont.enabled = true;
+        
+
         foreach (GameObject g in spawnWord.missingList) {
             g.SetActive(false);
             Debug.Log("reaveal letters");
@@ -58,5 +69,7 @@ public class HealthManager : MonoBehaviour {
             
 
     }
+
+    
 
 }

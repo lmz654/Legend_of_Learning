@@ -23,9 +23,11 @@ public class PlayerManager : MonoBehaviour
     Animator anim;
     Rigidbody2D rb;
 
+
     // Use this for initialization
     void Start()
     {
+        
         healthManager = GetComponent<HealthManager>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -171,4 +173,7 @@ public class PlayerManager : MonoBehaviour
         speed = 0;
         this.enabled = false;
     }
+
+    
+
 }

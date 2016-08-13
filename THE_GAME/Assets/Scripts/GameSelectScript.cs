@@ -11,7 +11,7 @@ public class GameSelectScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        vocabNinja = histGame.GetComponent<Button>();
+        histGame = histGame.GetComponent<Button>();
         mathGame = mathGame.GetComponent<Button>();
         vocabNinja = vocabNinja.GetComponent<Button>();
         logout = logout.GetComponent<Button>();
@@ -19,10 +19,12 @@ public class GameSelectScript : MonoBehaviour {
 
     public void histPressed() {
         //history game selected
+        SceneManager.LoadScene("History Level One");
     }
 
     public void mathPressed() {
         //math game selected
+        SceneManager.LoadScene("Level 1");
     }
 
     public void ninjaPressed() {

@@ -31,6 +31,7 @@ public class SpawnWord : MonoBehaviour {
     HealthManager healthManager;
     public AudioSource clearSound;
     ArrayList tempIndex;
+    public ArrayList letterIndexes;
 
 
 
@@ -58,6 +59,7 @@ public class SpawnWord : MonoBehaviour {
 	
     public void MakeWord()
     {
+        letterIndexes = new ArrayList();
         tempIndex = new ArrayList();
         covered = new ArrayList();
         hey = new ArrayList();
@@ -84,6 +86,7 @@ public class SpawnWord : MonoBehaviour {
                     newLetter.name = letterName;
                     newLetter.GetComponent<SpriteRenderer>().sprite = letterSprite;
                     hey.Add(newLetter);
+                    letterIndexes.Add(j);
                 }
             }
         }
@@ -128,36 +131,23 @@ public class SpawnWord : MonoBehaviour {
             tempIndex.Add(randomCharIndx);
             MissingLetter();
         }
-        else if (charLength >= 11 || charLength <= 13)
-        {
-            MissingLetter();
-            tempIndex.Add(randomCharIndx);
-            MissingLetter();
-            tempIndex.Add(randomCharIndx);
-            MissingLetter();
-            tempIndex.Add(randomCharIndx);
-            MissingLetter();
-            tempIndex.Add(randomCharIndx);
-            MissingLetter();
-            tempIndex.Add(randomCharIndx);
-            MissingLetter();
-        }
 
     }
 
     //Used to display the question box for the missing letters
     public void MissingLetter()
     {
-        randomCharIndx = Random.Range(0, charLength);
+        randomCharIndx = Random.Range(0, charLength-1);
 
         //while loop to prevent the missing letter from appearing in the same spot
         while (tempIndex.Contains(randomCharIndx))
         {
-            randomCharIndx = Random.Range(0, charLength);
+            randomCharIndx = Random.Range(0, charLength-1);
         }
 
         //string indxx = randomCharIndx.ToString();
-      //  GameObject.FindGameObjectWithTag("missing" + indxx);
+        //  GameObject.FindGameObjectWithTag("missing" + indxx);
+        Debug.Log("index of missing char " + randomCharIndx + charLength);
         missingList[randomCharIndx].SetActive(true);
         covered.Add(randomCharIndx);
     }
