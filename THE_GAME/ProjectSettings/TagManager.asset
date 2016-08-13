@@ -24,6 +24,7 @@ TagManager:
   - WordSpawn
   - Ground
   - AppleSpawns
+  - New Tag
   layers:
   - Default
   - TransparentFX

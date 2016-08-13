@@ -35,7 +35,8 @@ public class GameManager : MonoBehaviour {
 
 	void Start()
 	{
-		if (unansweredQuestions == null || unansweredQuestions.Count == 0) 
+        Cursor.visible = true;
+        if (unansweredQuestions == null || unansweredQuestions.Count == 0) 
 		{
 			unansweredQuestions = questions.ToList<Question>();
 		}
