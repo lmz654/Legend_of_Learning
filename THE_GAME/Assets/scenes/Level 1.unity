@@ -620,9 +620,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hazardCount: 3
-  spawnWait: 0.1
-  startWait: 1
-  waveWait: 5
   ans: {fileID: 151926, guid: 00da5fd798479c44e8871795cd34c0a3, type: 2}
   spawns:
   - {fileID: 392667959}
@@ -639,9 +636,7 @@ MonoBehaviour:
   - {fileID: 192244, guid: cb2270ad32e7548bcaaa3d38cf9e7ba3, type: 2}
   - {fileID: 122044, guid: daef34dc5d2c445058143de4920a5999, type: 2}
   - {fileID: 102500, guid: cf7b51a71bc9f4ce2b39ec95af2d1dd5, type: 2}
-  speed: 1
   level: 1
-  speedx: 0
 --- !u!4 &1062080541
 Transform:
   m_ObjectHideFlags: 0
@@ -782,7 +777,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpawn: {fileID: 2121204243}
   bulletSpeed: 1000
-  fireRate: 0.6
+  fireRate: 0.3
   source: {fileID: 0}
 --- !u!82 &2121204245
 AudioSource:

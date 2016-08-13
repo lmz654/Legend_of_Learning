@@ -103,13 +103,13 @@ public class GameController : MonoBehaviour {
             Destroy(bird);
         }
         tempBirds = new List<GameObject>();
+        time = 0;
         SpawnWaves();
     }
 
 	// Update is called once per frame
 	void Update () {
         time += Time.deltaTime;
-
         if (time > 7.2f)
         {
            time -= 7.2f;
